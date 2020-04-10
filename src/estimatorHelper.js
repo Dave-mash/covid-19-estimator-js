@@ -56,7 +56,7 @@ const estimatorHelper = (data) => {
 			impact.infectionsByRequestedTime * 0.05, 0
 		);
 		impact.casesForVentilatorsByRequestedTime = parseInt(
-			impact.infectionsByRequestedTime * 0.2, 0
+			impact.infectionsByRequestedTime * 0.02, 0
 		);
 		impactInfections = impact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
@@ -72,7 +72,7 @@ const estimatorHelper = (data) => {
 			severeImpact.infectionsByRequestedTime * 0.05, 0
 		);
 		severeImpact.casesForVentilatorsByRequestedTime = parseInt(
-			severeImpact.infectionsByRequestedTime * 0.2, 0
+			severeImpact.infectionsByRequestedTime * 0.02, 0
 		);
 		impactVal = impact.severeCasesByRequestedTime;
 		severeImpactVal = severeImpact.severeCasesByRequestedTime;
@@ -96,7 +96,7 @@ const estimatorHelper = (data) => {
 			impact.infectionsByRequestedTime * 0.05, 0
 		);
 		impact.casesForVentilatorsByRequestedTime = parseInt(
-			impact.infectionsByRequestedTime * 0.2, 0
+			impact.infectionsByRequestedTime * 0.02, 0
 		);
 
 		impactInfections = impact.infectionsByRequestedTime;
@@ -113,7 +113,7 @@ const estimatorHelper = (data) => {
 			severeImpact.infectionsByRequestedTime * 0.05, 0
 		);
 		severeImpact.casesForVentilatorsByRequestedTime = parseInt(
-			severeImpact.infectionsByRequestedTime * 0.2, 0
+			severeImpact.infectionsByRequestedTime * 0.02, 0
 		);
 		impactVal = impact.severeCasesByRequestedTime;
 		severeImpactVal = severeImpact.severeCasesByRequestedTime;
@@ -137,7 +137,7 @@ const estimatorHelper = (data) => {
 			impact.infectionsByRequestedTime * 0.05, 0
 		);
 		impact.casesForVentilatorsByRequestedTime = parseInt(
-			impact.infectionsByRequestedTime * 0.2, 0
+			impact.infectionsByRequestedTime * 0.02, 0
 		);
 
 		impactInfections = impact.infectionsByRequestedTime;
@@ -160,7 +160,7 @@ const estimatorHelper = (data) => {
 			severeImpact.infectionsByRequestedTime * 0.05, 0
 		);
 		severeImpact.casesForVentilatorsByRequestedTime = parseInt(
-			severeImpact.infectionsByRequestedTime * 0.2, 0
+			severeImpact.infectionsByRequestedTime * 0.02, 0
 		);
 
 		impactInfections = severeImpact.infectionsByRequestedTime;
