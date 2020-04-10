@@ -7,18 +7,33 @@ export default covid19ImpactEstimator;
 /*
 Expected Input
 {
-	region: {
-		name: 'Africa',
-		avgAge: 19.7,
-		avgDailyIncomeInUSD: 2,
-		avgDailyIncomePopulation: 0.67
-	},
-	reportedCases: 1053,
-	population: 7922844,
-	totalHospitalBeds: 175459,
-	timeToElapse: 30,
-	periodType: 'days'
+  region: {
+    name: 'Africa',
+    avgAge: 19.7,
+    avgDailyIncomeInUSD: 3,
+    avgDailyIncomePopulation: 0.72
+  },
+  reportedCases: 1302,
+  population: 8203543,
+  totalHospitalBeds: 225924,
+  timeToElapse: 46,
+  periodType: 'days'
 }
+
+{
+  data: {},
+  impact: { currentlyInfected: 13020, infectionsByRequestedTime: 426639360 },
+  severeImpact: {
+    currentlyInfected: 65100,
+    infectionsByRequestedTime: 2133196800,
+    severeCasesByRequestedTime: 63995904,
+    hospitalBedsByRequestedTime: -63916831
+  }
+}
+
+
+
+
 
 Expected Output
 {
