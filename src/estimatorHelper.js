@@ -10,7 +10,9 @@ const estimatorHelper = (data) => {
 	const exponentDys = parseInt(data.timeToElapse / 3, 0);
 	const exponentWks = parseInt((data.timeToElapse * 7) / 3, 0);
 	const exponentMths = parseInt((data.timeToElapse * 30) / 3, 0);
-	const availableBeds = Math.round(data.totalHospitalBeds * 0.35);
+	const estimateBeds = parseInt(data.totalHospitalBeds * 0.35, 0);
+	const numIsInteger = !Number.isInteger(data.totalHospitalBeds * 0.35, 0);
+	const availableBeds = numIsInteger ? estimateBeds + 1 : estimateBeds;
 	const impactInDays = parseInt(
 		impactCurrentlyInfected * (2 ** exponentDys), 0
 	);
@@ -99,24 +101,24 @@ export default estimatorHelper;
 
 
 /*
-reportedCases: 292,
-population: 3158736,
-totalHospitalBeds: 161196,
-timeToElapse: 6,
-periodType: 'weeks'
+reportedCases: 1594,
+population: 7539720,
+totalHospitalBeds: 55809,
+timeToElapse: 49,
+periodType: 'days'
 {
   data: {},
   impact: {
-    currentlyInfected: 2920,
-    infectionsByRequestedTime: 47841280,
-    severeCasesByRequestedTime: 7176192,
-    hospitalBedsByRequestedTime: -998177186718 // -7119773
+    currentlyInfected: 15940,
+    infectionsByRequestedTime: 1044643840,
+    severeCasesByRequestedTime: 156696576,
+    hospitalBedsByRequestedTime: -156677043
   },
   severeImpact: {
-    currentlyInfected: 14600,
-    infectionsByRequestedTime: 239206400,
-    severeCasesByRequestedTime: 35880960,
-    hospitalBedsByRequestedTime: -4990886159262
+    currentlyInfected: 79700,
+    infectionsByRequestedTime: 5223219200,
+    severeCasesByRequestedTime: 783482880,
+    hospitalBedsByRequestedTime: -783463347
   }
 }
 */
