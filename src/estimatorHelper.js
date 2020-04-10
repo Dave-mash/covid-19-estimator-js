@@ -44,7 +44,7 @@ const estimatorHelper = (data) => {
 	);
 	const impactHospitalBedsByRequestedTimeMnths = availableBeds - impactInMonths;
 	const sImpacthospitalBedsByRequestedTimeMnths = availableBeds - severeCasesByRequestedTimeMnths;
-	// console.log('======>', data);
+	console.log('======>', data);
 
 	estimate.impact.currentlyInfected = impactCurrentlyInfected;
 	estimate.severeImpact.currentlyInfected = severeImpactCurrentlyInfected;
