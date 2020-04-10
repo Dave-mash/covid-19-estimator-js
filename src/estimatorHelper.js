@@ -61,9 +61,9 @@ const estimatorHelper = (data) => {
 		);
 		impactInfections = impact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = (dollarsInFlight * totalDys).toFixed(2);
+		dollarStr = dollarsInFlight * totalDys;
 
-		impact.dollarsInFlight = parseInt(dollarStr, 0);
+		impact.dollarsInFlight = Math.floor(dollarStr * 100) / 100;
 
 		severeImpact.infectionsByRequestedTime = severeImpactInWeeks;
 		severeImpact.severeCasesByRequestedTime = parseInt(
@@ -83,9 +83,9 @@ const estimatorHelper = (data) => {
 
 		impactInfections = severeImpact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = (dollarsInFlight * totalDys).toFixed(2);
+		dollarStr = dollarsInFlight * totalDys;
 
-		severeImpact.dollarsInFlight = parseInt(dollarStr, 0);
+		severeImpact.dollarsInFlight = Math.floor(dollarStr * 100) / 100;
 
 		break;
 	case 'months':
@@ -102,9 +102,9 @@ const estimatorHelper = (data) => {
 
 		impactInfections = impact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = (dollarsInFlight * totalDys).toFixed(2);
+		dollarStr = dollarsInFlight * totalDys;
 
-		impact.dollarsInFlight = parseInt(dollarStr, 0);
+		impact.dollarsInFlight = Math.floor(dollarStr * 100) / 100;
 
 		severeImpact.infectionsByRequestedTime = severeImpactInMnths;
 		severeImpact.severeCasesByRequestedTime = parseInt(
@@ -124,9 +124,9 @@ const estimatorHelper = (data) => {
 
 		impactInfections = severeImpact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = (dollarsInFlight * totalDys).toFixed(2);
+		dollarStr = dollarsInFlight * totalDys;
 
-		severeImpact.dollarsInFlight = parseInt(dollarStr, 0);
+		severeImpact.dollarsInFlight = Math.floor(dollarStr * 100) / 100;
 		break;
 	case 'days':
 	default:
@@ -143,9 +143,9 @@ const estimatorHelper = (data) => {
 
 		impactInfections = impact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = (dollarsInFlight * totalDys).toFixed(2);
+		dollarStr = dollarsInFlight * totalDys;
 
-		impact.dollarsInFlight = parseInt(dollarStr, 0);
+		impact.dollarsInFlight = Math.floor(dollarStr * 100) / 100;
 
 		severeImpact.infectionsByRequestedTime = severeImpactInDays;
 		severeImpact.severeCasesByRequestedTime = parseInt(
@@ -166,9 +166,9 @@ const estimatorHelper = (data) => {
 
 		impactInfections = severeImpact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = (dollarsInFlight * totalDys).toFixed(2);
+		dollarStr = dollarsInFlight * totalDys;
 
-		severeImpact.dollarsInFlight = parseInt(dollarStr, 0);
+		severeImpact.dollarsInFlight = Math.floor(dollarStr * 100) / 100;
 	}
 
 	console.log('------>', estimate);
