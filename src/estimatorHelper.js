@@ -31,6 +31,7 @@ const estimatorHelper = (data) => {
 
   estimate.impact.currentlyInfected = impactCurrentlyInfected;
   estimate.severeImpact.currentlyInfected = severeImpactCurrentlyInfected;
+  console.log('======>', data)
 
   switch (data.periodType) {
     case 'weeks':
