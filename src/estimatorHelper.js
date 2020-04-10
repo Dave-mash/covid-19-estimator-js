@@ -10,7 +10,7 @@ const estimatorHelper = (data) => {
 	const exponentDys = parseInt(data.timeToElapse / 3, 0);
 	const exponentWks = parseInt((data.timeToElapse * 7) / 3, 0);
 	const exponentMths = parseInt((data.timeToElapse * 30) / 3, 0);
-	const availableBeds = parseInt(data.totalHospitalBeds * 0.35, 0);
+	const availableBeds = Math.round(data.totalHospitalBeds * 0.35);
 	const impactInDays = parseInt(
 		impactCurrentlyInfected * (2 ** exponentDys), 0
 	);
