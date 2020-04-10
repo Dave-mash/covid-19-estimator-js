@@ -17,6 +17,8 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    "indent": [2, "tab"],
+    "no-tabs": 0,
     "comma-dangle": ["error", "never"],
     "no-param-reassign": ["error", { "props": false }]
   },
