@@ -28,6 +28,7 @@ const estimatorHelper = (data) => {
 	const severeImpactInMonths = parseInt(
 		severeImpactCurrentlyInfected * (2 ** exponentMths), 0
 	);
+	console.log('======>', data)
 
 	estimate.impact.currentlyInfected = impactCurrentlyInfected;
 	estimate.severeImpact.currentlyInfected = severeImpactCurrentlyInfected;
