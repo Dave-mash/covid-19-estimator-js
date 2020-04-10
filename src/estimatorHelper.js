@@ -33,8 +33,8 @@ const estimatorHelper = (data) => {
 
 	const { severeImpact } = estimate;
 	const { impact } = estimate;
-	const totalImpactAvailableBeds = availableBeds - impact.severeCasesByRequestedTime;
-	const totalSevereAvailableBeds = availableBeds - severeImpact.severeCasesByRequestedTime;
+	let impactVal;
+	let severeImpactVal;
 
 	impact.currentlyInfected = impactCurrentlyInfected;
 	severeImpact.currentlyInfected = severeImpactCurrentlyInfected;
@@ -49,8 +49,12 @@ const estimatorHelper = (data) => {
 		severeImpact.severeCasesByRequestedTime = parseInt(
 			0.15 * severeImpact.infectionsByRequestedTime, 0
 		);
-		impact.hospitalBedsByRequestedTime = totalImpactAvailableBeds;
-		severeImpact.hospitalBedsByRequestedTime = totalSevereAvailableBeds;
+
+		impactVal = impact.severeCasesByRequestedTime;
+		severeImpactVal = severeImpact.severeCasesByRequestedTime;
+
+		impact.hospitalBedsByRequestedTime = availableBeds - impactVal;
+		severeImpact.hospitalBedsByRequestedTime = availableBeds - severeImpactVal;
 		break;
 	case 'months':
 		impact.infectionsByRequestedTime = impactInMonths;
@@ -61,8 +65,12 @@ const estimatorHelper = (data) => {
 		severeImpact.severeCasesByRequestedTime = parseInt(
 			0.15 * severeImpact.infectionsByRequestedTime, 0
 		);
-		impact.hospitalBedsByRequestedTime = totalImpactAvailableBeds;
-		severeImpact.hospitalBedsByRequestedTime = totalSevereAvailableBeds;
+
+		impactVal = impact.severeCasesByRequestedTime;
+		severeImpactVal = severeImpact.severeCasesByRequestedTime;
+
+		impact.hospitalBedsByRequestedTime = availableBeds - impactVal;
+		severeImpact.hospitalBedsByRequestedTime = availableBeds - severeImpactVal;
 		break;
 	case 'days':
 	default:
@@ -74,8 +82,12 @@ const estimatorHelper = (data) => {
 		severeImpact.severeCasesByRequestedTime = parseInt(
 			0.15 * severeImpact.infectionsByRequestedTime, 0
 		);
-		impact.hospitalBedsByRequestedTime = totalImpactAvailableBeds;
-		severeImpact.hospitalBedsByRequestedTime = totalSevereAvailableBeds;
+
+		impactVal = impact.severeCasesByRequestedTime;
+		severeImpactVal = severeImpact.severeCasesByRequestedTime;
+
+		impact.hospitalBedsByRequestedTime = availableBeds - impactVal;
+		severeImpact.hospitalBedsByRequestedTime = availableBeds - severeImpactVal;
 	}
 
 	console.log('------>', estimate);
@@ -87,25 +99,24 @@ export default estimatorHelper;
 
 
 /*
-
-reportedCases: 2188,
-population: 5398393,
-totalHospitalBeds: 204378,
-timeToElapse: 3,
+reportedCases: 292,
+population: 3158736,
+totalHospitalBeds: 161196,
+timeToElapse: 6,
 periodType: 'weeks'
-
 {
   data: {},
   impact: {
-    currentlyInfected: 21880,
-    infectionsByRequestedTime: 2800640,
-    severeCasesByRequestedTime: 420096,
-    hospitalBedsByRequestedTime: -727191578772 // -348563
+    currentlyInfected: 2920,
+    infectionsByRequestedTime: 47841280,
+    severeCasesByRequestedTime: 7176192,
+    hospitalBedsByRequestedTime: -998177186718 // -7119773
   },
   severeImpact: {
-    currentlyInfected: 109400,
-    infectionsByRequestedTime: 14003200,
-    severeCasesByRequestedTime: 2100480,
-    hospitalBedsByRequestedTime: -3635958179988
+    currentlyInfected: 14600,
+    infectionsByRequestedTime: 239206400,
+    severeCasesByRequestedTime: 35880960,
+    hospitalBedsByRequestedTime: -4990886159262
   }
+}
 */
