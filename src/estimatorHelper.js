@@ -53,7 +53,7 @@ const estimatorHelper = (data) => {
 			0.15 * impact.infectionsByRequestedTime, 0
 		);
 		impact.casesForICUByRequestedTime = parseInt(
-			impact.infectionsByRequestedTime * 0.5, 0
+			impact.infectionsByRequestedTime * 0.05, 0
 		);
 		impact.casesForVentilatorsByRequestedTime = parseInt(
 			impact.infectionsByRequestedTime * 0.2, 0
@@ -69,7 +69,7 @@ const estimatorHelper = (data) => {
 			0.15 * severeImpact.infectionsByRequestedTime, 0
 		);
 		severeImpact.casesForICUByRequestedTime = parseInt(
-			severeImpact.infectionsByRequestedTime * 0.5, 0
+			severeImpact.infectionsByRequestedTime * 0.05, 0
 		);
 		severeImpact.casesForVentilatorsByRequestedTime = parseInt(
 			severeImpact.infectionsByRequestedTime * 0.2, 0
@@ -93,7 +93,7 @@ const estimatorHelper = (data) => {
 			0.15 * impact.infectionsByRequestedTime, 0
 		);
 		impact.casesForICUByRequestedTime = parseInt(
-			impact.infectionsByRequestedTime * 0.5, 0
+			impact.infectionsByRequestedTime * 0.05, 0
 		);
 		impact.casesForVentilatorsByRequestedTime = parseInt(
 			impact.infectionsByRequestedTime * 0.2, 0
@@ -110,7 +110,7 @@ const estimatorHelper = (data) => {
 			0.15 * severeImpact.infectionsByRequestedTime, 0
 		);
 		severeImpact.casesForICUByRequestedTime = parseInt(
-			severeImpact.infectionsByRequestedTime * 0.5, 0
+			severeImpact.infectionsByRequestedTime * 0.05, 0
 		);
 		severeImpact.casesForVentilatorsByRequestedTime = parseInt(
 			severeImpact.infectionsByRequestedTime * 0.2, 0
@@ -134,7 +134,7 @@ const estimatorHelper = (data) => {
 			0.15 * impact.infectionsByRequestedTime, 0
 		);
 		impact.casesForICUByRequestedTime = parseInt(
-			impact.infectionsByRequestedTime * 0.5, 0
+			impact.infectionsByRequestedTime * 0.05, 0
 		);
 		impact.casesForVentilatorsByRequestedTime = parseInt(
 			impact.infectionsByRequestedTime * 0.2, 0
@@ -157,7 +157,7 @@ const estimatorHelper = (data) => {
 		impact.hospitalBedsByRequestedTime = availableBeds - impactVal;
 		severeImpact.hospitalBedsByRequestedTime = availableBeds - severeImpactVal;
 		severeImpact.casesForICUByRequestedTime = parseInt(
-			severeImpact.infectionsByRequestedTime * 0.5, 0
+			severeImpact.infectionsByRequestedTime * 0.05, 0
 		);
 		severeImpact.casesForVentilatorsByRequestedTime = parseInt(
 			severeImpact.infectionsByRequestedTime * 0.2, 0
