@@ -31,10 +31,6 @@ Expected Input
   }
 }
 
-
-
-
-
 Expected Output
 {
 	data: {}, // the input data you got
