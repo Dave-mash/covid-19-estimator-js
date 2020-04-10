@@ -21,7 +21,7 @@ const estimatorHelper = (data) => {
 		0.15 * impactInDays, 0
 	);
 	const impactHospitalBedsByRequestedTimeDys = availableBeds - impactInDays;
-	const sImpactHospitalBedsByRequestedTimeDys = severeCasesByRequestedTimeDys - availableBeds;
+	const sImpactHospitalBedsByRequestedTimeDys = availableBeds - severeCasesByRequestedTimeDys;
 	const impactInWeeks = parseInt(
 		impactCurrentlyInfected * (2 ** exponentWks), 0
 	);
