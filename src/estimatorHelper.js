@@ -33,8 +33,8 @@ const estimatorHelper = (data) => {
 
 	const { severeImpact } = estimate;
 	const { impact } = estimate;
-	const totalSevereAvailableBeds = availableBeds - severeImpact.severeCasesByRequestedTime;
 	const totalImpactAvailableBeds = availableBeds - impact.severeCasesByRequestedTime;
+	const totalSevereAvailableBeds = availableBeds - severeImpact.severeCasesByRequestedTime;
 
 	impact.currentlyInfected = impactCurrentlyInfected;
 	severeImpact.currentlyInfected = severeImpactCurrentlyInfected;
@@ -49,6 +49,8 @@ const estimatorHelper = (data) => {
 		severeImpact.severeCasesByRequestedTime = parseInt(
 			0.15 * severeImpact.infectionsByRequestedTime, 0
 		);
+		impact.hospitalBedsByRequestedTime = totalImpactAvailableBeds;
+		severeImpact.hospitalBedsByRequestedTime = totalSevereAvailableBeds;
 		break;
 	case 'months':
 		impact.infectionsByRequestedTime = impactInMonths;
@@ -59,6 +61,8 @@ const estimatorHelper = (data) => {
 		severeImpact.severeCasesByRequestedTime = parseInt(
 			0.15 * severeImpact.infectionsByRequestedTime, 0
 		);
+		impact.hospitalBedsByRequestedTime = totalImpactAvailableBeds;
+		severeImpact.hospitalBedsByRequestedTime = totalSevereAvailableBeds;
 		break;
 	case 'days':
 	default:
@@ -70,13 +74,38 @@ const estimatorHelper = (data) => {
 		severeImpact.severeCasesByRequestedTime = parseInt(
 			0.15 * severeImpact.infectionsByRequestedTime, 0
 		);
+		impact.hospitalBedsByRequestedTime = totalImpactAvailableBeds;
+		severeImpact.hospitalBedsByRequestedTime = totalSevereAvailableBeds;
 	}
 
-	impact.hospitalBedsByRequestedTime = totalImpactAvailableBeds;
-	severeImpact.hospitalBedsByRequestedTime = totalSevereAvailableBeds;
 	console.log('------>', estimate);
 
 	return estimate;
 };
 
 export default estimatorHelper;
+
+
+/*
+
+reportedCases: 2188,
+population: 5398393,
+totalHospitalBeds: 204378,
+timeToElapse: 3,
+periodType: 'weeks'
+
+{
+  data: {},
+  impact: {
+    currentlyInfected: 21880,
+    infectionsByRequestedTime: 2800640,
+    severeCasesByRequestedTime: 420096,
+    hospitalBedsByRequestedTime: -727191578772 // -348563
+  },
+  severeImpact: {
+    currentlyInfected: 109400,
+    infectionsByRequestedTime: 14003200,
+    severeCasesByRequestedTime: 2100480,
+    hospitalBedsByRequestedTime: -3635958179988
+  }
+*/
