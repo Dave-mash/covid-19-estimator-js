@@ -17,61 +17,63 @@ const estimatorHelper = (data) => {
 	const severeImpactInDays = parseInt(
 		severeImpactCurrentlyInfected * (2 ** exponentDys), 0
 	);
-	const severeCasesByRequestedTimeDys = parseInt(
-		0.15 * impactInDays, 0
-	);
-	const impactHospitalBedsByRequestedTimeDys = availableBeds - impactInDays;
-	const sImpactHospitalBedsByRequestedTimeDys = availableBeds - severeCasesByRequestedTimeDys;
 	const impactInWeeks = parseInt(
 		impactCurrentlyInfected * (2 ** exponentWks), 0
 	);
 	const severeImpactInWeeks = parseInt(
 		severeImpactCurrentlyInfected * (2 ** exponentWks), 0
 	);
-	const severeCasesByRequestedTimeWeeks = parseInt(
-		0.15 * impactInWeeks, 0
-	);
-	const impactHospitalBedsByRequestedTimeWeeks = availableBeds - impactInWeeks;
-	const sImpactHospitalBedsByRequestedTimeWeeks = availableBeds - severeCasesByRequestedTimeWeeks;
 	const impactInMonths = parseInt(
 		impactCurrentlyInfected * (2 ** exponentMths), 0
 	);
 	const severeImpactInMnths = parseInt(
 		severeImpactCurrentlyInfected * (2 ** exponentMths), 0
 	);
-	const severeCasesByRequestedTimeMnths = parseInt(
-		0.15 * impactInMonths, 0
-	);
-	const impactHospitalBedsByRequestedTimeMnths = availableBeds - impactInMonths;
-	const sImpacthospitalBedsByRequestedTimeMnths = availableBeds - severeCasesByRequestedTimeMnths;
 	console.log('======>', data);
 
-	estimate.impact.currentlyInfected = impactCurrentlyInfected;
-	estimate.severeImpact.currentlyInfected = severeImpactCurrentlyInfected;
+	const { severeImpact } = estimate;
+	const { impact } = estimate;
+	const totalSevereAvailableBeds = availableBeds - severeImpact.severeCasesByRequestedTime;
+	const totalImpactAvailableBeds = availableBeds - impact.severeCasesByRequestedTime;
+
+	impact.currentlyInfected = impactCurrentlyInfected;
+	severeImpact.currentlyInfected = severeImpactCurrentlyInfected;
 
 	switch (data.periodType) {
 	case 'weeks':
-		estimate.impact.infectionsByRequestedTime = impactInWeeks;
-		estimate.impact.hospitalBedsByRequestedTime = impactHospitalBedsByRequestedTimeWeeks;
-		estimate.severeImpact.infectionsByRequestedTime = severeImpactInWeeks;
-		estimate.severeImpact.severeCasesByRequestedTime = severeCasesByRequestedTimeWeeks;
-		estimate.severeImpact.hospitalBedsByRequestedTime = sImpactHospitalBedsByRequestedTimeWeeks;
+		impact.infectionsByRequestedTime = impactInWeeks;
+		impact.severeCasesByRequestedTime = parseInt(
+			0.15 * impact.infectionsByRequestedTime, 0
+		);
+		severeImpact.infectionsByRequestedTime = severeImpactInWeeks;
+		severeImpact.severeCasesByRequestedTime = parseInt(
+			0.15 * severeImpact.infectionsByRequestedTime, 0
+		);
 		break;
 	case 'months':
-		estimate.impact.infectionsByRequestedTime = impactInMonths;
-		estimate.impact.hospitalBedsByRequestedTime = impactHospitalBedsByRequestedTimeMnths;
-		estimate.severeImpact.infectionsByRequestedTime = severeImpactInMnths;
-		estimate.severeImpact.severeCasesByRequestedTime = severeCasesByRequestedTimeMnths;
-		estimate.severeImpact.hospitalBedsByRequestedTime = sImpacthospitalBedsByRequestedTimeMnths;
+		impact.infectionsByRequestedTime = impactInMonths;
+		impact.severeCasesByRequestedTime = parseInt(
+			0.15 * impact.infectionsByRequestedTime, 0
+		);
+		severeImpact.infectionsByRequestedTime = severeImpactInMnths;
+		severeImpact.severeCasesByRequestedTime = parseInt(
+			0.15 * severeImpact.infectionsByRequestedTime, 0
+		);
 		break;
 	case 'days':
 	default:
-		estimate.impact.infectionsByRequestedTime = impactInDays;
-		estimate.impact.hospitalBedsByRequestedTime = impactHospitalBedsByRequestedTimeDys;
-		estimate.severeImpact.infectionsByRequestedTime = severeImpactInDays;
-		estimate.severeImpact.severeCasesByRequestedTime = severeCasesByRequestedTimeDys;
-		estimate.severeImpact.hospitalBedsByRequestedTime = sImpactHospitalBedsByRequestedTimeDys;
+		impact.infectionsByRequestedTime = impactInDays;
+		impact.severeCasesByRequestedTime = parseInt(
+			0.15 * impact.infectionsByRequestedTime, 0
+		);
+		severeImpact.infectionsByRequestedTime = severeImpactInDays;
+		severeImpact.severeCasesByRequestedTime = parseInt(
+			0.15 * severeImpact.infectionsByRequestedTime, 0
+		);
 	}
+
+	impact.hospitalBedsByRequestedTime = totalImpactAvailableBeds;
+	severeImpact.hospitalBedsByRequestedTime = totalSevereAvailableBeds;
 	console.log('------>', estimate);
 
 	return estimate;
