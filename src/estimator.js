@@ -7,17 +7,17 @@ export default covid19ImpactEstimator;
 /*
 Expected Input
 {
-	region: {
-		name: "Africa",
-		avgAge: 19.7,
-		avgDailyIncomeInUSD: 5,
-		avgDailyIncomePopulation: 0.71
-	},
-	periodType: "days",
-	timeToElapse: 58,
-	reportedCases: 674,
-	population: 66622705,
-	totalHospitalBeds: 1380614
+  region: {
+    name: 'Africa',
+    avgAge: 19.7,
+    avgDailyIncomeInUSD: 2,
+    avgDailyIncomePopulation: 0.66
+  },
+  reportedCases: 1601,
+  population: 4661431,
+  totalHospitalBeds: 236483,
+  timeToElapse: 7,
+  periodType: 'days'
 }
 
 Expected Output

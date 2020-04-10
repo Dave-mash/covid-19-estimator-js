@@ -7,9 +7,9 @@ const estimate = {
 const estimatorHelper = (data) => {
 	const impactCurrentlyInfected = data.reportedCases * 10;
 	const severeImpactCurrentlyInfected = data.reportedCases * 50;
-	const exponentDys = parseInt(data.timeToElapse, 0);
-	const exponentWks = parseInt(data.timeToElapse * 7, 0);
-	const exponentMths = parseInt(data.timeToElapse * 30, 0);
+	const exponentDys = parseInt(data.timeToElapse/3, 0);
+	const exponentWks = parseInt((data.timeToElapse * 7)/3, 0);
+	const exponentMths = parseInt((data.timeToElapse * 30)/3, 0);
 	const impactInDays = parseInt(
 		impactCurrentlyInfected * (2 ** exponentDys), 0
 	);
