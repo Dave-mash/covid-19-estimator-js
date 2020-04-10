@@ -8,6 +8,7 @@ const estimatorHelper = (data) => {
 	const impactCurrentlyInfected = data.reportedCases * 10;
 	const severeImpactCurrentlyInfected = data.reportedCases * 50;
 	const exponentDys = parseInt(data.timeToElapse / 3, 0);
+	const totalDys = data.timeToElapse;
 	const exponentWks = parseInt((data.timeToElapse * 7) / 3, 0);
 	const exponentMths = parseInt((data.timeToElapse * 30) / 3, 0);
 	const estimateBeds = parseInt(data.totalHospitalBeds * 0.35, 0);
@@ -60,7 +61,7 @@ const estimatorHelper = (data) => {
 		);
 		impactInfections = impact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = (dollarsInFlight * 30).toFixed(2);
+		dollarStr = (dollarsInFlight * totalDys).toFixed(2);
 
 		impact.dollarsInFlight = parseInt(dollarStr, 0);
 
@@ -82,7 +83,7 @@ const estimatorHelper = (data) => {
 
 		impactInfections = severeImpact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = (dollarsInFlight * 30).toFixed(2);
+		dollarStr = (dollarsInFlight * totalDys).toFixed(2);
 
 		severeImpact.dollarsInFlight = parseInt(dollarStr, 0);
 
@@ -101,7 +102,7 @@ const estimatorHelper = (data) => {
 
 		impactInfections = impact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = (dollarsInFlight * 30).toFixed(2);
+		dollarStr = (dollarsInFlight * totalDys).toFixed(2);
 
 		impact.dollarsInFlight = parseInt(dollarStr, 0);
 
@@ -123,7 +124,7 @@ const estimatorHelper = (data) => {
 
 		impactInfections = severeImpact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = (dollarsInFlight * 30).toFixed(2);
+		dollarStr = (dollarsInFlight * totalDys).toFixed(2);
 
 		severeImpact.dollarsInFlight = parseInt(dollarStr, 0);
 		break;
@@ -142,7 +143,7 @@ const estimatorHelper = (data) => {
 
 		impactInfections = impact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = (dollarsInFlight * 30).toFixed(2);
+		dollarStr = (dollarsInFlight * totalDys).toFixed(2);
 
 		impact.dollarsInFlight = parseInt(dollarStr, 0);
 
@@ -165,7 +166,7 @@ const estimatorHelper = (data) => {
 
 		impactInfections = severeImpact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = (dollarsInFlight * 30).toFixed(2);
+		dollarStr = (dollarsInFlight * totalDys).toFixed(2);
 
 		severeImpact.dollarsInFlight = parseInt(dollarStr, 0);
 	}
@@ -179,24 +180,38 @@ export default estimatorHelper;
 
 
 /*
-reportedCases: 1594,
-population: 7539720,
-totalHospitalBeds: 55809,
-timeToElapse: 49,
-periodType: 'days'
+{
+  region: {
+    name: 'Africa',
+    avgAge: 19.7,
+    avgDailyIncomeInUSD: 2,
+    avgDailyIncomePopulation: 0.71
+  },
+  reportedCases: 950,
+  population: 7868175,
+  totalHospitalBeds: 62475,
+  timeToElapse: 18,
+  periodType: 'days'
+}
 {
   data: {},
   impact: {
-    currentlyInfected: 15940,
-    infectionsByRequestedTime: 1044643840,
-    severeCasesByRequestedTime: 156696576,
-    hospitalBedsByRequestedTime: -156677043
+    currentlyInfected: 9500,
+    infectionsByRequestedTime: 608000,
+    severeCasesByRequestedTime: 91200,
+    casesForICUByRequestedTime: 30400,
+    casesForVentilatorsByRequestedTime: 12160,
+    dollarsInFlight: 25900800, // 47964
+    hospitalBedsByRequestedTime: -69333
   },
   severeImpact: {
-    currentlyInfected: 79700,
-    infectionsByRequestedTime: 5223219200,
-    severeCasesByRequestedTime: 783482880,
-    hospitalBedsByRequestedTime: -783463347
+    currentlyInfected: 47500,
+    infectionsByRequestedTime: 3040000,
+    severeCasesByRequestedTime: 456000,
+    hospitalBedsByRequestedTime: -434133,
+    casesForICUByRequestedTime: 152000,
+    casesForVentilatorsByRequestedTime: 60800,
+    dollarsInFlight: 129504000
   }
 }
 */
