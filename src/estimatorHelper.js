@@ -83,7 +83,7 @@ const estimatorHelper = (data) => {
 
 		impactInfections = severeImpact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = dollarsInFlight * totalDys;
+		dollarStr = dollarsInFlight * totalDys * 7;
 
 		severeImpact.dollarsInFlight = Math.floor(dollarStr * 100) / 100;
 
@@ -124,7 +124,7 @@ const estimatorHelper = (data) => {
 
 		impactInfections = severeImpact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = dollarsInFlight * totalDys;
+		dollarStr = dollarsInFlight * totalDys * 30;
 
 		severeImpact.dollarsInFlight = Math.floor(dollarStr * 100) / 100;
 		break;
@@ -177,7 +177,6 @@ const estimatorHelper = (data) => {
 };
 
 export default estimatorHelper;
-
 
 /*
 {
