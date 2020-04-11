@@ -22,7 +22,16 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
-  "browserslist": [
-    "last 1 Chrome versions"
-  ]
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
