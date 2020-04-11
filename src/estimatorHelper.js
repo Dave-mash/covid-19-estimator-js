@@ -8,11 +8,14 @@ const estimatorHelper = (data) => {
 	const impactCurrentlyInfected = data.reportedCases * 10;
 	const severeImpactCurrentlyInfected = data.reportedCases * 50;
 	const exponentDys = parseInt(data.timeToElapse / 3, 0);
+	const totalDys = data.timeToElapse;
 	const exponentWks = parseInt((data.timeToElapse * 7) / 3, 0);
 	const exponentMths = parseInt((data.timeToElapse * 30) / 3, 0);
 	const estimateBeds = parseInt(data.totalHospitalBeds * 0.35, 0);
 	const numIsInteger = !Number.isInteger(data.totalHospitalBeds * 0.35, 0);
 	const availableBeds = numIsInteger ? estimateBeds + 1 : estimateBeds;
+	const avgIncome = data.region.avgDailyIncomeInUSD;
+	const incomePopulation = data.region.avgDailyIncomePopulation;
 	const impactInDays = parseInt(
 		impactCurrentlyInfected * (2 ** exponentDys), 0
 	);
@@ -37,6 +40,9 @@ const estimatorHelper = (data) => {
 	const { impact } = estimate;
 	let impactVal;
 	let severeImpactVal;
+	let impactInfections;
+	let dollarsInFlight;
+	let dollarStr;
 
 	impact.currentlyInfected = impactCurrentlyInfected;
 	severeImpact.currentlyInfected = severeImpactCurrentlyInfected;
@@ -47,32 +53,80 @@ const estimatorHelper = (data) => {
 		impact.severeCasesByRequestedTime = parseInt(
 			0.15 * impact.infectionsByRequestedTime, 0
 		);
+		impact.casesForICUByRequestedTime = parseInt(
+			impact.infectionsByRequestedTime * 0.05, 0
+		);
+		impact.casesForVentilatorsByRequestedTime = parseInt(
+			impact.infectionsByRequestedTime * 0.02, 0
+		);
+		impactInfections = impact.infectionsByRequestedTime;
+		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
+		dollarStr = dollarsInFlight / (totalDys * 7);
+
+		impact.dollarsInFlight = parseInt(dollarStr, 0);
+
 		severeImpact.infectionsByRequestedTime = severeImpactInWeeks;
 		severeImpact.severeCasesByRequestedTime = parseInt(
 			0.15 * severeImpact.infectionsByRequestedTime, 0
 		);
-
+		severeImpact.casesForICUByRequestedTime = parseInt(
+			severeImpact.infectionsByRequestedTime * 0.05, 0
+		);
+		severeImpact.casesForVentilatorsByRequestedTime = parseInt(
+			severeImpact.infectionsByRequestedTime * 0.02, 0
+		);
 		impactVal = impact.severeCasesByRequestedTime;
 		severeImpactVal = severeImpact.severeCasesByRequestedTime;
 
 		impact.hospitalBedsByRequestedTime = availableBeds - impactVal;
 		severeImpact.hospitalBedsByRequestedTime = availableBeds - severeImpactVal;
+
+		impactInfections = severeImpact.infectionsByRequestedTime;
+		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
+		dollarStr = dollarsInFlight / (totalDys * 7);
+
+		severeImpact.dollarsInFlight = parseInt(dollarStr, 0);
+
 		break;
 	case 'months':
 		impact.infectionsByRequestedTime = impactInMonths;
 		impact.severeCasesByRequestedTime = parseInt(
 			0.15 * impact.infectionsByRequestedTime, 0
 		);
+		impact.casesForICUByRequestedTime = parseInt(
+			impact.infectionsByRequestedTime * 0.05, 0
+		);
+		impact.casesForVentilatorsByRequestedTime = parseInt(
+			impact.infectionsByRequestedTime * 0.02, 0
+		);
+
+		impactInfections = impact.infectionsByRequestedTime;
+		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
+		dollarStr = dollarsInFlight / (totalDys * 30);
+
+		impact.dollarsInFlight = parseInt(dollarStr, 0);
+
 		severeImpact.infectionsByRequestedTime = severeImpactInMnths;
 		severeImpact.severeCasesByRequestedTime = parseInt(
 			0.15 * severeImpact.infectionsByRequestedTime, 0
 		);
-
+		severeImpact.casesForICUByRequestedTime = parseInt(
+			severeImpact.infectionsByRequestedTime * 0.05, 0
+		);
+		severeImpact.casesForVentilatorsByRequestedTime = parseInt(
+			severeImpact.infectionsByRequestedTime * 0.02, 0
+		);
 		impactVal = impact.severeCasesByRequestedTime;
 		severeImpactVal = severeImpact.severeCasesByRequestedTime;
 
 		impact.hospitalBedsByRequestedTime = availableBeds - impactVal;
 		severeImpact.hospitalBedsByRequestedTime = availableBeds - severeImpactVal;
+
+		impactInfections = severeImpact.infectionsByRequestedTime;
+		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
+		dollarStr = dollarsInFlight / (totalDys * 30);
+
+		severeImpact.dollarsInFlight = parseInt(dollarStr, 0);
 		break;
 	case 'days':
 	default:
@@ -80,6 +134,19 @@ const estimatorHelper = (data) => {
 		impact.severeCasesByRequestedTime = parseInt(
 			0.15 * impact.infectionsByRequestedTime, 0
 		);
+		impact.casesForICUByRequestedTime = parseInt(
+			impact.infectionsByRequestedTime * 0.05, 0
+		);
+		impact.casesForVentilatorsByRequestedTime = parseInt(
+			impact.infectionsByRequestedTime * 0.02, 0
+		);
+
+		impactInfections = impact.infectionsByRequestedTime;
+		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
+		dollarStr = dollarsInFlight / totalDys;
+
+		impact.dollarsInFlight = parseInt(dollarStr, 0);
+
 		severeImpact.infectionsByRequestedTime = severeImpactInDays;
 		severeImpact.severeCasesByRequestedTime = parseInt(
 			0.15 * severeImpact.infectionsByRequestedTime, 0
@@ -90,6 +157,18 @@ const estimatorHelper = (data) => {
 
 		impact.hospitalBedsByRequestedTime = availableBeds - impactVal;
 		severeImpact.hospitalBedsByRequestedTime = availableBeds - severeImpactVal;
+		severeImpact.casesForICUByRequestedTime = parseInt(
+			severeImpact.infectionsByRequestedTime * 0.05, 0
+		);
+		severeImpact.casesForVentilatorsByRequestedTime = parseInt(
+			severeImpact.infectionsByRequestedTime * 0.02, 0
+		);
+
+		impactInfections = severeImpact.infectionsByRequestedTime;
+		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
+		dollarStr = dollarsInFlight / totalDys;
+
+		severeImpact.dollarsInFlight = parseInt(dollarStr, 0);
 	}
 
 	console.log('------>', estimate);
@@ -99,26 +178,39 @@ const estimatorHelper = (data) => {
 
 export default estimatorHelper;
 
-
 /*
-reportedCases: 1594,
-population: 7539720,
-totalHospitalBeds: 55809,
-timeToElapse: 49,
-periodType: 'days'
+{
+  region: {
+    name: 'Africa',
+    avgAge: 19.7,
+    avgDailyIncomeInUSD: 2,
+    avgDailyIncomePopulation: 0.71
+  },
+  reportedCases: 950,
+  population: 7868175,
+  totalHospitalBeds: 62475,
+  timeToElapse: 18,
+  periodType: 'days'
+}
 {
   data: {},
   impact: {
-    currentlyInfected: 15940,
-    infectionsByRequestedTime: 1044643840,
-    severeCasesByRequestedTime: 156696576,
-    hospitalBedsByRequestedTime: -156677043
+    currentlyInfected: 9500,
+    infectionsByRequestedTime: 608000,
+    severeCasesByRequestedTime: 91200,
+    casesForICUByRequestedTime: 30400,
+    casesForVentilatorsByRequestedTime: 12160,
+    dollarsInFlight: 25900800, // 47964
+    hospitalBedsByRequestedTime: -69333
   },
   severeImpact: {
-    currentlyInfected: 79700,
-    infectionsByRequestedTime: 5223219200,
-    severeCasesByRequestedTime: 783482880,
-    hospitalBedsByRequestedTime: -783463347
+    currentlyInfected: 47500,
+    infectionsByRequestedTime: 3040000,
+    severeCasesByRequestedTime: 456000,
+    hospitalBedsByRequestedTime: -434133,
+    casesForICUByRequestedTime: 152000,
+    casesForVentilatorsByRequestedTime: 60800,
+    dollarsInFlight: 129504000
   }
 }
 */
