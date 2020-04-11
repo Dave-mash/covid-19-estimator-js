@@ -5,6 +5,8 @@ const estimate = {
 };
 
 const estimatorHelper = (data) => {
+	console.log('data: Over here!!!!!!');
+	console.log('data: ', data);
 	const impactCurrentlyInfected = data.reportedCases * 10;
 	const severeImpactCurrentlyInfected = data.reportedCases * 50;
 	const exponentDys = parseInt(data.timeToElapse / 3, 0);
@@ -177,40 +179,3 @@ const estimatorHelper = (data) => {
 };
 
 export default estimatorHelper;
-
-/*
-{
-  region: {
-    name: 'Africa',
-    avgAge: 19.7,
-    avgDailyIncomeInUSD: 2,
-    avgDailyIncomePopulation: 0.71
-  },
-  reportedCases: 950,
-  population: 7868175,
-  totalHospitalBeds: 62475,
-  timeToElapse: 18,
-  periodType: 'days'
-}
-{
-  data: {},
-  impact: {
-    currentlyInfected: 9500,
-    infectionsByRequestedTime: 608000,
-    severeCasesByRequestedTime: 91200,
-    casesForICUByRequestedTime: 30400,
-    casesForVentilatorsByRequestedTime: 12160,
-    dollarsInFlight: 25900800, // 47964
-    hospitalBedsByRequestedTime: -69333
-  },
-  severeImpact: {
-    currentlyInfected: 47500,
-    infectionsByRequestedTime: 3040000,
-    severeCasesByRequestedTime: 456000,
-    hospitalBedsByRequestedTime: -434133,
-    casesForICUByRequestedTime: 152000,
-    casesForVentilatorsByRequestedTime: 60800,
-    dollarsInFlight: 129504000
-  }
-}
-*/
