@@ -5,6 +5,7 @@ const estimate = {
 };
 
 const estimatorHelper = (data) => {
+	console.log(data)
 	const impactCurrentlyInfected = data.reportedCases * 10;
 	const severeImpactCurrentlyInfected = data.reportedCases * 50;
 	const exponentDys = parseInt(data.timeToElapse / 3, 0);
