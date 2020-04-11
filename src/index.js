@@ -8,7 +8,7 @@ $('#myform').submit(() => {
 	const $inputs = $('#myform :input');
 
 	const values = {};
-	$inputs.each(function () {
+	$inputs.each(() => {
 		if ($(this).val()) {
 			values[this.name] = $(this).val();
 		}

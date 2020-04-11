@@ -5,8 +5,6 @@ const estimate = {
 };
 
 const estimatorHelper = (data) => {
-	console.log('data: Over here!!!!!!');
-	console.log('data: ', data);
 	const impactCurrentlyInfected = data.reportedCases * 10;
 	const severeImpactCurrentlyInfected = data.reportedCases * 50;
 	const exponentDys = parseInt(data.timeToElapse / 3, 0);
@@ -36,7 +34,6 @@ const estimatorHelper = (data) => {
 	const severeImpactInMnths = parseInt(
 		severeImpactCurrentlyInfected * (2 ** exponentMths), 0
 	);
-	console.log('======>', data);
 
 	const { severeImpact } = estimate;
 	const { impact } = estimate;
@@ -172,8 +169,6 @@ const estimatorHelper = (data) => {
 
 		severeImpact.dollarsInFlight = parseInt(dollarStr, 0);
 	}
-
-	console.log('------>', estimate);
 
 	return estimate;
 };
