@@ -63,7 +63,7 @@ const estimatorHelper = (data) => {
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
 		dollarStr = dollarsInFlight * totalDys * 7;
 
-		impact.dollarsInFlight = Math.floor(dollarStr * 100) / 100;
+		impact.dollarsInFlight = parseInt(dollarStr, 0);
 
 		severeImpact.infectionsByRequestedTime = severeImpactInWeeks;
 		severeImpact.severeCasesByRequestedTime = parseInt(
@@ -85,7 +85,7 @@ const estimatorHelper = (data) => {
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
 		dollarStr = dollarsInFlight * totalDys * 7;
 
-		severeImpact.dollarsInFlight = Math.floor(dollarStr * 100) / 100;
+		severeImpact.dollarsInFlight = parseInt(dollarStr, 0);
 
 		break;
 	case 'months':
@@ -104,7 +104,7 @@ const estimatorHelper = (data) => {
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
 		dollarStr = dollarsInFlight * totalDys * 30;
 
-		impact.dollarsInFlight = Math.floor(dollarStr * 100) / 100;
+		impact.dollarsInFlight = parseInt(dollarStr, 0);
 
 		severeImpact.infectionsByRequestedTime = severeImpactInMnths;
 		severeImpact.severeCasesByRequestedTime = parseInt(
@@ -126,7 +126,7 @@ const estimatorHelper = (data) => {
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
 		dollarStr = dollarsInFlight * totalDys * 30;
 
-		severeImpact.dollarsInFlight = Math.floor(dollarStr * 100) / 100;
+		severeImpact.dollarsInFlight = parseInt(dollarStr, 0);
 		break;
 	case 'days':
 	default:
@@ -145,7 +145,7 @@ const estimatorHelper = (data) => {
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
 		dollarStr = dollarsInFlight * totalDys;
 
-		impact.dollarsInFlight = Math.floor(dollarStr * 100) / 100;
+		impact.dollarsInFlight = parseInt(dollarStr, 0);
 
 		severeImpact.infectionsByRequestedTime = severeImpactInDays;
 		severeImpact.severeCasesByRequestedTime = parseInt(
@@ -168,7 +168,7 @@ const estimatorHelper = (data) => {
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
 		dollarStr = dollarsInFlight * totalDys;
 
-		severeImpact.dollarsInFlight = Math.floor(dollarStr * 100) / 100;
+		severeImpact.dollarsInFlight = parseInt(dollarStr, 0);
 	}
 
 	console.log('------>', estimate);
