@@ -61,7 +61,7 @@ const estimatorHelper = (data) => {
 		);
 		impactInfections = impact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = dollarsInFlight * totalDys * 7;
+		dollarStr = (dollarsInFlight * 7) / totalDys;
 
 		impact.dollarsInFlight = parseInt(dollarStr, 0);
 
@@ -83,7 +83,7 @@ const estimatorHelper = (data) => {
 
 		impactInfections = severeImpact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = dollarsInFlight * totalDys * 7;
+		dollarStr = (dollarsInFlight * 7) / totalDys;
 
 		severeImpact.dollarsInFlight = parseInt(dollarStr, 0);
 
@@ -102,7 +102,7 @@ const estimatorHelper = (data) => {
 
 		impactInfections = impact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = dollarsInFlight * totalDys * 30;
+		dollarStr = (dollarsInFlight * 30) / totalDys;
 
 		impact.dollarsInFlight = parseInt(dollarStr, 0);
 
@@ -124,7 +124,7 @@ const estimatorHelper = (data) => {
 
 		impactInfections = severeImpact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = dollarsInFlight * totalDys * 30;
+		dollarStr = (dollarsInFlight * 30) / totalDys;
 
 		severeImpact.dollarsInFlight = parseInt(dollarStr, 0);
 		break;
@@ -143,7 +143,7 @@ const estimatorHelper = (data) => {
 
 		impactInfections = impact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = dollarsInFlight * totalDys;
+		dollarStr = dollarsInFlight / totalDys;
 
 		impact.dollarsInFlight = parseInt(dollarStr, 0);
 
@@ -166,7 +166,7 @@ const estimatorHelper = (data) => {
 
 		impactInfections = severeImpact.infectionsByRequestedTime;
 		dollarsInFlight = impactInfections * avgIncome * incomePopulation;
-		dollarStr = dollarsInFlight * totalDys;
+		dollarStr = dollarsInFlight / totalDys;
 
 		severeImpact.dollarsInFlight = parseInt(dollarStr, 0);
 	}
