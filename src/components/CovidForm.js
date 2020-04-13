@@ -8,10 +8,10 @@ const CovidForm = () => (
 			id="myform"
 			initialValues={{
 				population: '',
-				timeToElapse: '',
-				reportedCases: '',
-				totalHospitalBeds: '',
-				periodType: 'days'
+				time_to_elapse: '',
+				reported_cases: '',
+				total_hospital_beds: '',
+				exampleFormControlSelect1: 'days'
 			}}
 			onSubmit={(values, { setSubmitting }) => {
 				console.log(values);
@@ -39,59 +39,60 @@ const CovidForm = () => (
 								className="input-text"
 								onChange={handleChange}
 								value={values.population}
-								data-population
+								data-population={values.population}
 								required
 							/>
 						</div>
 						<div className="form-row form-row-1">
-							<label htmlFor="timeToElapse">Time To Elapse</label>
+							<label htmlFor="time_to_elapse">Time To Elapse</label>
 							<Field
 								type="number"
-								name="timeToElapse"
-								id="timeToElapse"
+								name="time_to_elapse"
+								id="time_to_elapse"
 								className="input-text"
 								onChange={handleChange}
-								value={values.timeToElapse}
-								data-time-to-elapse
+								value={values.time_to_elapse}
+								data-time-to-elapse={values.time_to_elapse}
 								required
 							/>
 						</div>
 					</div>
 					<div className="form-row">
-						<label htmlFor="reportedCases">Reported Cases</label>
+						<label htmlFor="reported_cases">Reported Cases</label>
 						<Field
 							type="number"
-							name="reportedCases"
-							id="reportedCases"
+							name="reported_cases"
+							id="reported_cases"
 							className="input-text"
 							onChange={handleChange}
-							value={values.reportedCases}
-							data-reported-cases
+							value={values.reported_cases}
+							data-reported-cases={values.reported_cases}
 							required
 						/>
 					</div>
 					<div className="form-group">
 						<div className="form-row form-row-1 ">
-							<label htmlFor="totalHospitalBeds">Total Hospital Beds</label>
+							<label htmlFor="total_hospital_beds">Total Hospital Beds</label>
 							<Field
 								type="number"
-								name="totalHospitalBeds"
-								id="totalHospitalBeds"
+								name="total_hospital_beds"
+								id="total_hospital_beds"
 								className="input-text"
 								onChange={handleChange}
-								value={values.totalHospitalBeds}
-								data-total-hospital-beds
+								value={values.total_hospital_beds}
+								data-total-hospital-beds={values.total_hospital_beds}
 								required
 							/>
 						</div>
 						<div className="form-row form-row-1">
-							<label htmlFor="periodType">Period Type</label>
+							<label htmlFor="exampleFormControlSelect1">Period Type</label>
 							<Field
 								as="select"
 								className="form-control input-text"
-								id="periodType"
-								name="periodType"
-								data-period-type={values.periodType}
+								id="exampleFormControlSelect1"
+								name="exampleFormControlSelect1"
+								data-period-type={values.exampleFormControlSelect1}
+								required
 							>
 								<option defaultValue="days">days</option>
 								<option defaultValue="weeks">weeks</option>
@@ -103,8 +104,8 @@ const CovidForm = () => (
 						<Field
 							type="submit"
 							className="register"
+							data-go-estimate={values}
 							value="Estimate"
-							data-go-estimate
 						/>
 					</div>
 				</form>
