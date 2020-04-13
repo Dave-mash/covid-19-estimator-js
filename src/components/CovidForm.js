@@ -40,7 +40,7 @@ const CovidForm = () => (
 									className="input-text"
 									onChange={handleChange}
 									value={values.population}
-									data-population="true"
+									data-population
 									required
 								/>
 							</label>
@@ -55,7 +55,7 @@ const CovidForm = () => (
 									className="input-text"
 									onChange={handleChange}
 									value={values.time_to_elapse}
-									data-time-to-elapse="true"
+									data-time-to-elapse
 									required
 								/>
 							</label>
@@ -71,7 +71,7 @@ const CovidForm = () => (
 								className="input-text"
 								onChange={handleChange}
 								value={values.reported_cases}
-								data-reported-cases="true"
+								data-reported-cases
 								required
 							/>
 						</label>
@@ -87,7 +87,7 @@ const CovidForm = () => (
 									className="input-text"
 									onChange={handleChange}
 									value={values.total_hospital_beds}
-									data-total-hospital-beds="true"
+									data-total-hospital-beds
 									required
 								/>
 							</label>
