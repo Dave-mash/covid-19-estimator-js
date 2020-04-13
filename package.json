@@ -7,7 +7,7 @@
   "homepage": "https://dave-mash.github.io/covid-19-estimator-js",
   "scripts": {
     "lint": "eslint ./src/",
-    "build:dev": "webpack",
+    "build:dev": "webpack -p --env production",
     "build:prod": "NODE_ENV=production webpack -p --env production",
     "start": "node server/server.js",
     "dev-server": "webpack-dev-server",
