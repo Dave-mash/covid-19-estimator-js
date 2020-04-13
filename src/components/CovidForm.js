@@ -8,9 +8,9 @@ const CovidForm = () => (
 			id="myform"
 			initialValues={{
 				population: '',
-				time_to_elapse: '',
-				reported_cases: '',
-				total_hospital_beds: '',
+				timeToElapse: '',
+				reportedCases: '',
+				totalHospitalBeds: '',
 				exampleFormControlSelect1: 'days'
 			}}
 			onSubmit={(values, { setSubmitting }) => {
@@ -31,80 +31,90 @@ const CovidForm = () => (
 					<h2>INPUT DATA</h2>
 					<div className="form-group">
 						<div className="form-row form-row-1">
-							<label htmlFor="population">Population</label>
-							<Field
-								type="number"
-								name="population"
-								id="population"
-								className="input-text"
-								onChange={handleChange}
-								value={values.population}
-								data-population={values.population}
-								required
-							/>
+							<label htmlFor="population">
+								Population
+								<Field
+									type="number"
+									name="population"
+									id="population"
+									className="input-text"
+									onChange={handleChange}
+									value={values.population}
+									data-population="population"
+									required
+								/>
+							</label>
 						</div>
 						<div className="form-row form-row-1">
-							<label htmlFor="time_to_elapse">Time To Elapse</label>
-							<Field
-								type="number"
-								name="time_to_elapse"
-								id="time_to_elapse"
-								className="input-text"
-								onChange={handleChange}
-								value={values.time_to_elapse}
-								data-time-to-elapse={values.time_to_elapse}
-								required
-							/>
+							<label htmlFor="timeToElapse">
+								Time To Elapse
+								<Field
+									type="number"
+									name="timeToElapse"
+									id="timeToElapse"
+									className="input-text"
+									onChange={handleChange}
+									value={values.timeToElapse}
+									data-time-to-elapse="timeToElapse"
+									required
+								/>
+							</label>
 						</div>
 					</div>
 					<div className="form-row">
-						<label htmlFor="reported_cases">Reported Cases</label>
-						<Field
-							type="number"
-							name="reported_cases"
-							id="reported_cases"
-							className="input-text"
-							onChange={handleChange}
-							value={values.reported_cases}
-							data-reported-cases={values.reported_cases}
-							required
-						/>
+						<label htmlFor="reportedCases">
+							Reported Cases
+							<Field
+								type="number"
+								name="reportedCases"
+								id="reportedCases"
+								className="input-text"
+								onChange={handleChange}
+								value={values.reportedCases}
+								data-reported-cases="reportedCases"
+								required
+							/>
+						</label>
 					</div>
 					<div className="form-group">
 						<div className="form-row form-row-1 ">
-							<label htmlFor="total_hospital_beds">Total Hospital Beds</label>
-							<Field
-								type="number"
-								name="total_hospital_beds"
-								id="total_hospital_beds"
-								className="input-text"
-								onChange={handleChange}
-								value={values.total_hospital_beds}
-								data-total-hospital-beds={values.total_hospital_beds}
-								required
-							/>
+							<label htmlFor="totalHospitalBeds">
+								Total Hospital Beds
+								<Field
+									type="number"
+									name="totalHospitalBeds"
+									id="totalHospitalBeds"
+									className="input-text"
+									onChange={handleChange}
+									value={values.totalHospitalBeds}
+									data-total-hospital-beds="totalHospitalBeds"
+									required
+								/>
+							</label>
 						</div>
 						<div className="form-row form-row-1">
-							<label htmlFor="exampleFormControlSelect1">Period Type</label>
-							<Field
-								as="select"
-								className="form-control input-text"
-								id="exampleFormControlSelect1"
-								name="exampleFormControlSelect1"
-								data-period-type={values.exampleFormControlSelect1}
-								required
-							>
-								<option defaultValue="days">days</option>
-								<option defaultValue="weeks">weeks</option>
-								<option defaultValue="months">months</option>
-							</Field>
+							<label htmlFor="exampleFormControlSelect1">
+								Period Type
+								<Field
+									as="select"
+									className="form-control input-text"
+									id="exampleFormControlSelect1"
+									name="exampleFormControlSelect1"
+									data-period-type="periodType"
+									required
+								>
+									<option defaultValue="days">days</option>
+									<option defaultValue="weeks">weeks</option>
+									<option defaultValue="months">months</option>
+								</Field>
+							</label>
 						</div>
 					</div>
 					<div className="form-row-last">
 						<Field
 							type="submit"
 							className="register"
-							data-go-estimate={values}
+							data-go-estimate="data-go-estimate"
 							value="Estimate"
 						/>
 					</div>
