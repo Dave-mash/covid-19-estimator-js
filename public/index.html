@@ -3,113 +3,18 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Covid-19 Estimator</title>
     <meta name="description" content="Covid-19 estimator">
     <meta name="keywords" content="virus,corona,covid,estimator">
     <meta name="author" content="David Mwangi">
-    <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="icon" href="%PUBLIC_URL%/virus.png" /> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Font-->
-    <!-- <link rel="stylesheet" type="text/css" href="css/opensans-font.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="fonts/line-awesome/css/line-awesome.min.css"> -->
-    <!-- Jquery -->
-    <!-- <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css"> -->
-    <!-- Main Style Css -->
-    <link rel="stylesheet" href="css/style.css" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Covid-19 Estimator</title>
+    <link type="icon" src="virus.png">
 </head>
 
 <body class="form-v4">
-    <div class="page-content">
-        <div class="form-v4-content">
-            <div class="form-left">
-                <h2>COVID-19 INFORMATION</h2>
-                <p class="text-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et molestie feugiat sed. Diam volutpat commodo.</p>
-                <p class="text-2"><span>Eu ultrices:</span> Vitae auctor eu augue ut. Malesuada nunc vel risus commodo viverra. Praesent elementum facilisis leo vel.</p>
-            </div>
-            <form
-                class="form-detail"
-                action="#"
-                method="post"
-                id="myform"
-            >
-                <h2>INPUT DATA</h2>
-                <div class="form-group">
-                    <div class="form-row form-row-1">
-                        <label for="population">Population</label>
-                        <input type="number" name="population" id="population" class="input-text" data-population required>
-                    </div>
-                    <div class="form-row form-row-1">
-                        <label for="time_to_elapse">Time To Elapse</label>
-                        <input type="number" name="time_to_elapse" id="time_to_elapse" class="input-text" data-time-to-elapse required>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <label for="reported_cases">Reported Cases</label>
-                    <input type="number" name="reported_cases" id="reported_cases" class="input-text" required data-reported-cases>
-                </div>
-                <div class="form-group">
-                    <div class="form-row form-row-1 ">
-                        <label for="total_hospital_beds">Total Hospital Beds</label>
-                        <input type="number" name="total_hospital_beds" id="total_hospital_beds" class="input-text" required data-total-hospital-beds>
-                    </div>
-                    <div class="form-row form-row-1">
-                        <label for="exampleFormControlSelect1">Period Type</label>
-                        <select class="form-control input-text" id="exampleFormControlSelect1" name="exampleFormControlSelect1" data-period-type required>
-                            <option>days</option>
-                            <option>weeks</option>
-                            <option>months</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row-last">
-                    <input
-                        type="submit"
-                        class="register"
-                        value="Estimate"
-                        data-go-estimate
-                    >
-                </div>
-            </form>
-        </div>
-    </div>
-    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script> -->
-    <script>
-    $(document).ready(() => {
-        jQuery.validator.setDefaults({
-            debug: true,
-            success: function(label) {
-                label.attr('id', 'valid');
-            },
-        });
-        $("#myform").validate({
-            messages: {
-                population: {
-                    required: "REQUIRED!"
-                },
-                time_to_elapse: {
-                    required: "REQUIRED!"
-                },
-                reported_cases: {
-                    required: "REQUIRED!"
-                },
-                total_hospital_beds: {
-                    required: "REQUIRED!"
-                },
-                exampleFormControlSelect1: {
-                    required: "REQUIRED!"
-                }
-            }
-        });
-    });
-    </script>
-    <script src="./dist/main.js"></script>
+    <div id="app"></div>
+    <script src="/covid-19-estimator-js/dist/bundle.js"></script>
 </body>
 
 </html>
