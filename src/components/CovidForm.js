@@ -39,7 +39,7 @@ const CovidForm = () => (
 								className="input-text"
 								onChange={handleChange}
 								value={values.population}
-								data-population
+								data-population="true"
 								required
 							/>
 						</div>
@@ -52,7 +52,7 @@ const CovidForm = () => (
 								className="input-text"
 								onChange={handleChange}
 								value={values.time_to_elapse}
-								data-time-to-elapse
+								data-time-to-elapse="true"
 								required
 							/>
 						</div>
@@ -66,7 +66,7 @@ const CovidForm = () => (
 							className="input-text"
 							onChange={handleChange}
 							value={values.reported_cases}
-							data-reported-cases
+							data-reported-cases="true"
 							required
 						/>
 					</div>
@@ -80,7 +80,7 @@ const CovidForm = () => (
 								className="input-text"
 								onChange={handleChange}
 								value={values.total_hospital_beds}
-								data-total-hospital-beds
+								data-total-hospital-beds="true"
 								required
 							/>
 						</div>
@@ -91,7 +91,7 @@ const CovidForm = () => (
 								className="form-control input-text"
 								id="exampleFormControlSelect1"
 								name="exampleFormControlSelect1"
-								data-period-type
+								data-period-type="true"
 								required
 							>
 								<option defaultValue="" hidden>Please select</option>
@@ -105,7 +105,7 @@ const CovidForm = () => (
 						<button
 							type="submit"
 							className="register"
-							data-go-estimate
+							data-go-estimate="true"
 						>
 							Estimate
 						</button>
