@@ -40,7 +40,7 @@ const CovidForm = () => (
 									className="input-text"
 									onChange={handleChange}
 									value={values.population}
-									data-population="population"
+									data-population={values.population}
 									required
 								/>
 							</label>
@@ -55,7 +55,7 @@ const CovidForm = () => (
 									className="input-text"
 									onChange={handleChange}
 									value={values.timeToElapse}
-									data-time-to-elapse="timeToElapse"
+									data-time-to-elaps={values.timeToElapse}
 									required
 								/>
 							</label>
@@ -71,7 +71,7 @@ const CovidForm = () => (
 								className="input-text"
 								onChange={handleChange}
 								value={values.reportedCases}
-								data-reported-cases="reportedCases"
+								data-reported-cases={values.reportedCases}
 								required
 							/>
 						</label>
@@ -87,7 +87,7 @@ const CovidForm = () => (
 									className="input-text"
 									onChange={handleChange}
 									value={values.totalHospitalBeds}
-									data-total-hospital-beds="totalHospitalBeds"
+									data-total-hospital-beds={values.totalHospitalBeds}
 									required
 								/>
 							</label>
@@ -95,12 +95,12 @@ const CovidForm = () => (
 						<div className="form-row form-row-1">
 							<label htmlFor="exampleFormControlSelect1">
 								Period Type
-								<Field
+								<br /><Field
 									as="select"
 									className="form-control input-text"
 									id="exampleFormControlSelect1"
 									name="exampleFormControlSelect1"
-									data-period-type="periodType"
+									data-period-type={values.periodType}
 									required
 								>
 									<option defaultValue="days">days</option>
