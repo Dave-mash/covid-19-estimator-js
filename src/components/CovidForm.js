@@ -11,7 +11,7 @@ const CovidForm = () => (
 				time_to_elapse: '',
 				reported_cases: '',
 				total_hospital_beds: '',
-				exampleFormControlSelect1: ''
+				exampleFormControlSelect1: 'days'
 			}}
 			onSubmit={(values, { setSubmitting }) => {
 				console.log(values);
@@ -94,7 +94,6 @@ const CovidForm = () => (
 								data-period-type="true"
 								required
 							>
-								<option defaultValue="" hidden>Please select</option>
 								<option defaultValue="days">days</option>
 								<option defaultValue="weeks">weeks</option>
 								<option defaultValue="months">months</option>
@@ -102,13 +101,12 @@ const CovidForm = () => (
 						</div>
 					</div>
 					<div className="form-row-last">
-						<button
+						<Field
 							type="submit"
 							className="register"
 							data-go-estimate="true"
-						>
-							Estimate
-						</button>
+							value="Estimate"
+						/>
 					</div>
 				</form>
 			)}
