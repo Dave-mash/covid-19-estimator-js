@@ -15,12 +15,15 @@ module.exports = {
         Atomics: 'readonly',
         SharedArrayBuffer: 'readonly',
     },
+    parser: 'babel-eslint',
     parserOptions: {
         ecmaVersion: 2018,
         sourceType: 'module',
+        allowImportExportEverywhere: true
     },
     rules: {
         "indent": [2, "tab"],
+        "no-unused-expressions": 1,
         "no-tabs": 0,
         "comma-dangle": ["error", "never"],
         "no-param-reassign": ["error", { "props": false }]
