@@ -32,65 +32,57 @@ const CovidForm = () => (
 					<div className="form-group">
 						<div className="form-row form-row-1">
 							<label htmlFor="population">Population</label>
-							<label>
-								<Field
-									type="number"
-									name="population"
-									id="population"
-									className="input-text"
-									onChange={handleChange}
-									value={values.population}
-									data-population="population"
-									required
-								/>
-							</label>
+							<Field
+								type="number"
+								name="population"
+								id="population"
+								className="input-text"
+								onChange={handleChange}
+								value={values.population}
+								data-population={values.population}
+								required
+							/>
 						</div>
 						<div className="form-row form-row-1">
 							<label htmlFor="time_to_elapse">Time To Elapse</label>
-							<label>
-								<Field
-									type="number"
-									name="time_to_elapse"
-									id="time_to_elapse"
-									className="input-text"
-									onChange={handleChange}
-									value={values.time_to_elapse}
-									data-time-to-elapse={values.time_to_elapse}
-									required
-								/>
-							</label>
+							<Field
+								type="number"
+								name="time_to_elapse"
+								id="time_to_elapse"
+								className="input-text"
+								onChange={handleChange}
+								value={values.time_to_elapse}
+								data-time-to-elapse={values.time_to_elapse}
+								required
+							/>
 						</div>
 					</div>
 					<div className="form-row">
 						<label htmlFor="reported_cases">Reported Cases</label>
-						<label>
-							<Field
-								type="number"
-								name="reported_cases"
-								id="reported_cases"
-								className="input-text"
-								onChange={handleChange}
-								value={values.reported_cases}
-								data-reported-cases={values.reported_cases}
-								required
-							/>
-						</label>
+						<Field
+							type="number"
+							name="reported_cases"
+							id="reported_cases"
+							className="input-text"
+							onChange={handleChange}
+							value={values.reported_cases}
+							data-reported-cases={values.reported_cases}
+							required
+						/>
 					</div>
 					<div className="form-group">
 						<div className="form-row form-row-1 ">
 							<label htmlFor="total_hospital_beds">Total Hospital Beds</label>
-							<label>
-								<Field
-									type="number"
-									name="total_hospital_beds"
-									id="total_hospital_beds"
-									className="input-text"
-									onChange={handleChange}
-									value={values.total_hospital_beds}
-									data-total-hospital-beds={values.total_hospital_beds}
-									required
-								/>
-							</label>
+							<Field
+								type="number"
+								name="total_hospital_beds"
+								id="total_hospital_beds"
+								className="input-text"
+								onChange={handleChange}
+								value={values.total_hospital_beds}
+								data-total-hospital-beds={values.total_hospital_beds}
+								required
+							/>
 						</div>
 						<div className="form-row form-row-1">
 							<label htmlFor="exampleFormControlSelect1">Period Type</label>
