@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 const CovidApp = React.lazy(() => import('./components/CovidApp'));
 import('./styles/style.css');
-import('./styles/bootstrap.min.css');
+// import('./styles/bootstrap.min.css');
 
 const App = () => (
 	<Fragment>
