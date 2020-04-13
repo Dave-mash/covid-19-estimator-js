@@ -11,7 +11,7 @@ const CovidForm = () => (
 				timeToElapse: '',
 				reportedCases: '',
 				totalHospitalBeds: '',
-				exampleFormControlSelect1: 'days'
+				periodType: 'days'
 			}}
 			onSubmit={(values, { setSubmitting }) => {
 				console.log(values);
@@ -85,13 +85,13 @@ const CovidForm = () => (
 							/>
 						</div>
 						<div className="form-row form-row-1">
-							<label htmlFor="exampleFormControlSelect1">Period Type</label>
+							<label htmlFor="periodType">Period Type</label>
 							<Field
 								as="select"
 								className="form-control input-text"
-								id="exampleFormControlSelect1"
-								name="exampleFormControlSelect1"
-								data-period-type
+								id="periodType"
+								name="periodType"
+								data-period-type={values.periodType}
 							>
 								<option defaultValue="days">days</option>
 								<option defaultValue="weeks">weeks</option>
