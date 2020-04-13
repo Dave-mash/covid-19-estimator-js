@@ -65,7 +65,7 @@ class CovidForm extends React.Component {
 								className="input-text"
 								value={this.state.population}
 								onChange={this.handlePopulationChange}
-								data-population
+								data-population={this.state.population}
 								required
 							/>
 						</div>
@@ -78,7 +78,7 @@ class CovidForm extends React.Component {
 								className="input-text"
 								value={this.state.timeToElapse}
 								onChange={this.handleTimeToElapseChange}
-								data-time-to-elapse
+								data-time-to-elapse={this.state.timeToElapse}
 								required
 							/>
 						</div>
@@ -92,7 +92,7 @@ class CovidForm extends React.Component {
 							className="input-text"
 							value={this.state.reportedCases}
 							onChange={this.handleReportedCasesChange}
-							data-reported-cases
+							data-reported-cases={this.state.reportedCases}
 							required
 						/>
 					</div>
@@ -106,7 +106,7 @@ class CovidForm extends React.Component {
 								className="input-text"
 								value={this.state.totalHospitalBeds}
 								onChange={this.handleTotalHospitalBedsChange}
-								data-total-hospital-beds
+								data-total-hospital-beds={this.state.totalHospitalBeds}
 								required
 							/>
 						</div>
@@ -119,7 +119,7 @@ class CovidForm extends React.Component {
 								name="periodType"
 								value={this.state.periodType}
 								onChange={this.handlePeriodTypeChange}
-								data-period-type
+								data-period-type={this.state.periodType}
 							>
 								<option defaultValue="days">days</option>
 								<option defaultValue="weeks">weeks</option>
