@@ -23,45 +23,45 @@ export default class CovidForm extends React.Component {
 	}
 
 	handlePopulationChange(event) {
-		console.log(event.target.value)
-		this.setState({population: event.target.value});
+		console.log(event.target.value);
+		this.setState({ population: event.target.value });
 	}
 
 	handleTimeToElapseChange(event) {
-		console.log(event.target.value)
-		this.setState({timeToElapse: event.target.value});
+		console.log(event.target.value);
+		this.setState({ timeToElapse: event.target.value });
 	}
 
 	handleReportedCasesChange(event) {
-		console.log(event.target.value)
-		this.setState({reportedCases: event.target.value});
+		console.log(event.target.value);
+		this.setState({ reportedCases: event.target.value });
 	}
 
 	handleTotalHospitalBedsChange(event) {
-		console.log(event.target.value)
-		this.setState({totalHospitalBeds: event.target.value});
+		console.log(event.target.value);
+		this.setState({ totalHospitalBeds: event.target.value });
 	}
 
 	handlePeriodTypeChange(event) {
-		console.log(event.target.value)
-		this.setState({periodType: event.target.value});
+		console.log(event.target.value);
+		this.setState({ periodType: event.target.value });
 	}
 
 	handleSubmit(e) {
-		const data = {}
+		const data = {};
 
 		e.preventDefault();
-		data['population'] = parseInt(this.state.population, 0);
-		data['timeToElapse'] = parseInt(this.state.timeToElapse, 0);
-		data['reportedCases'] = parseInt(this.state.reportedCases, 0);
-		data['totalHospitalBeds'] = parseInt(this.state.totalHospitalBeds, 0);
+		data.population = parseInt(this.state.population, 0);
+		data.timeToElapse = parseInt(this.state.timeToElapse, 0);
+		data.reportedCases = parseInt(this.state.reportedCases, 0);
+		data.totalHospitalBeds = parseInt(this.state.totalHospitalBeds, 0);
 
-		data['region'] = {
-			name: "Africa",
+		data.region = {
+			name: 'Africa',
 			avgAge: 19.7,
 			avgDailyIncomeInUSD: 5,
 			avgDailyIncomePopulation: 0.71
-		}
+		};
 		estimatorHelper(data);
 	}
 
