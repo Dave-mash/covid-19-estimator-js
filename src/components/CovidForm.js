@@ -86,7 +86,6 @@ const CovidForm = () => (
 );
 
 export default CovidForm;
-
 /*
 		<Formik
 			className="form-detail"
