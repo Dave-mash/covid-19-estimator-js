@@ -1,8 +1,99 @@
 import React, { Fragment } from 'react';
-import { Formik, Field } from 'formik';
+// import { Formik, Field } from 'formik';
 
 const CovidForm = () => (
 	<Fragment>
+		<form
+			className="form-detail"
+			id="myform"
+			// onSubmit={handleSubmit}
+		>
+			<h2>INPUT DATA</h2>
+			<div className="form-group">
+				<div className="form-row form-row-1">
+					<label htmlFor="population">Population</label>
+					<input
+						type="number"
+						name="population"
+						id="population"
+						className="input-text"
+						// onChange={handleChange}
+						// value={values.population}
+						data-population
+						required
+					/>
+				</div>
+				<div className="form-row form-row-1">
+					<label htmlFor="time_to_elapse">Time To Elapse</label>
+					<input
+						type="number"
+						name="time_to_elapse"
+						id="time_to_elapse"
+						className="input-text"
+						// onChange={handleChange}
+						// value={values.time_to_elapse}
+						data-time-to-elapse
+						required
+					/>
+				</div>
+			</div>
+			<div className="form-row">
+				<label htmlFor="reported_cases">Reported Cases</label>
+				<input
+					type="number"
+					name="reported_cases"
+					id="reported_cases"
+					className="input-text"
+					// onChange={handleChange}
+					// value={values.reported_cases}
+					data-reported-cases
+					required
+				/>
+			</div>
+			<div className="form-group">
+				<div className="form-row form-row-1 ">
+					<label htmlFor="total_hospital_beds">Total Hospital Beds</label>
+					<input
+						type="number"
+						name="total_hospital_beds"
+						id="total_hospital_beds"
+						className="input-text"
+						// onChange={handleChange}
+						// value={values.total_hospital_beds}
+						data-total-hospital-beds
+						required
+					/>
+				</div>
+				<div className="form-row form-row-1">
+					<label htmlFor="period_type">Period Type</label>
+					<select
+						as="select"
+						className="form-control input-text select"
+						id="period_type"
+						name="period_type"
+						data-period-type
+					>
+						<option defaultValue="days">days</option>
+						<option defaultValue="weeks">weeks</option>
+						<option defaultValue="months">months</option>
+					</select>
+				</div>
+			</div>
+			<div className="form-row-last">
+				<input
+					type="submit"
+					className="register"
+					id="estimate"
+					value="Estimate"
+					data-go-estimate
+				/>
+			</div>
+		</form>
+	</Fragment>
+);
+
+export default CovidForm;
+/*
 		<Formik
 			className="form-detail"
 			id="myform"
@@ -23,99 +114,6 @@ const CovidForm = () => (
 				handleChange,
 				handleSubmit
 			}) => (
-				<form
-					className="form-detail"
-					id="myform"
-					onSubmit={handleSubmit}
-				>
-					<h2>INPUT DATA</h2>
-					<div className="form-group">
-						<div className="form-row form-row-1">
-							<label htmlFor="population">Population</label>
-							<Field
-								type="number"
-								name="population"
-								placeholder="Population"
-								id="population"
-								className="input-text"
-								onChange={handleChange}
-								value={values.population}
-								data-population={values.population}
-								required
-							/>
-						</div>
-						<div className="form-row form-row-1">
-							<label htmlFor="time_to_elapse">Time To Elapse</label>
-							<Field
-								type="number"
-								name="time_to_elapse"
-								placeholder="Time To Elapse"
-								id="time_to_elapse"
-								className="input-text"
-								onChange={handleChange}
-								value={values.time_to_elapse}
-								data-time-to-elapse={values.time_to_elapse}
-								required
-							/>
-						</div>
-					</div>
-					<div className="form-row">
-						<label htmlFor="reported_cases">Reported Cases</label>
-						<Field
-							type="number"
-							name="reported_cases"
-							placeholder="Reported To Elapse"
-							id="reported_cases"
-							className="input-text"
-							onChange={handleChange}
-							value={values.reported_cases}
-							data-reported-cases={values.reported_cases}
-							required
-						/>
-					</div>
-					<div className="form-group">
-						<div className="form-row form-row-1 ">
-							<label htmlFor="total_hospital_beds">Total Hospital Beds</label>
-							<Field
-								type="number"
-								name="total_hospital_beds"
-								placeholder="Total To Elapse"
-								id="total_hospital_beds"
-								className="input-text"
-								onChange={handleChange}
-								value={values.total_hospital_beds}
-								data-total-hospital-beds={values.total_hospital_beds}
-								required
-							/>
-						</div>
-						<div className="form-row form-row-1">
-							<label htmlFor="period_type">Period Type</label>
-							<Field
-								as="select"
-								className="form-control input-text select"
-								id="period_type"
-								name="period_type"
-								data-period-type={values.period_type}
-							>
-								<option defaultValue="days">days</option>
-								<option defaultValue="weeks">weeks</option>
-								<option defaultValue="months">months</option>
-							</Field>
-						</div>
-					</div>
-					<div className="form-row-last">
-						<Field
-							type="submit"
-							className="register"
-							id="estimate"
-							value="Estimate"
-							data-go-estimate
-						/>
-					</div>
-				</form>
-			)}
-		</Formik>
-	</Fragment>
-);
 
-export default CovidForm;
+			)}
+		</Formik> */
