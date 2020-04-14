@@ -7,7 +7,7 @@ const CovidForm = () => (
 			className="form-detail"
 			id="myform"
 			// onSubmit={handleSubmit}
-		>
+		><br />
 			<input
 				type="number"
 				name="population"
