@@ -3,7 +3,6 @@ import React, { Fragment } from 'react';
 
 const CovidForm = () => (
 	<Fragment>
-
 		<label htmlFor="population">
 			population
 			<input
