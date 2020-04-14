@@ -4,6 +4,10 @@ body {
 }
 select {
 	cursor: pointer;
+	padding: 10px;
+	width: 200px;
+	background: none;
+	border-radius: 3px;
 }
 .page-content {
 	width: 100%;
@@ -48,7 +52,7 @@ select {
 	margin-bottom: 34px;
 }
 .form-v4-content .form-left {
-	background: #3786bd;
+	background: #223ccc;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 	padding: 20px 40px;
@@ -102,7 +106,7 @@ select {
 	width: 100%;
 }
 .form-v4-content .form-detail h2 {
-	color: #3786bd;
+	color: #223ccc;
 }
 .form-v4-content .form-detail .form-group {
 	display: flex;
@@ -237,7 +241,7 @@ select {
    	top: 1px;
     width: 3px;
     height: 8px;
-    border: 1px solid #3786bd;
+    border: 1px solid #223ccc;
     border-width: 0 2px 2px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
@@ -257,11 +261,11 @@ select {
 }
 .form-v4-content .form-detail .form-checkbox .text {
 	font-weight: 700;
-	color: #3786bd;
+	color: #223ccc;
 	text-decoration: underline;
 }
 .form-v4-content .form-detail .register {
-	background: #3786bd;
+	background: #223ccc;
 	border-top-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 	width: 130px;
@@ -271,6 +275,7 @@ select {
 	color: #fff;
 	font-weight: 700;
 	font-size: 15px;
+	padding: 10px;
 }
 .form-v4-content .form-detail .register:hover {
 	background: #2f73a3;
