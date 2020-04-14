@@ -1,5 +1,4 @@
 const estimate = {
-	data: {},
 	impact: {},
 	severeImpact: {}
 };
@@ -17,6 +16,7 @@ const estimatorHelper = (data) => {
 	const availableBeds = numIsInteger ? estimateBeds + 1 : estimateBeds;
 	const avgIncome = data.region.avgDailyIncomeInUSD;
 	const incomePopulation = data.region.avgDailyIncomePopulation;
+	estimate['data'] = data;
 	const impactInDays = parseInt(
 		impactCurrentlyInfected * (2 ** exponentDys), 0
 	);

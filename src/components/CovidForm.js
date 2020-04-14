@@ -1,91 +1,161 @@
 import React, { Fragment } from 'react';
 // import { Formik, Field } from 'formik';
 
-const CovidForm = () => (
-	<Fragment>
-		<form
-			className="form-detail"
-			id="myform"
-			// onSubmit={handleSubmit}
-		>
-			<label htmlFor="population">
-				Population
-				<input
-					type="number"
-					name="population"
-					id="population"
-					className="input-text"
-					// onChange={handleChange}
-					// value={values.population}
-					data-population
-					required
-				/>
-			</label><br />
-			<label htmlFor="time_to_elapse">
-				Time To Elapse
-				<input
-					type="number"
-					name="time_to_elapse"
-					id="time_to_elapse"
-					className="input-text"
-					// onChange={handleChange}
-					// value={values.time_to_elapse}
-					data-time-to-elapse
-					required
-				/>
-			</label><br />
-			<label htmlFor="reported_cases">
-				Reported Cases
-				<input
-					type="number"
-					name="reported_cases"
-					id="reported_cases"
-					className="input-text"
-					// onChange={handleChange}
-					// value={values.reported_cases}
-					data-reported-cases
-					required
-				/>
-			</label><br />
-			<label htmlFor="total_hospital_beds">
-				Total Hospital Beds
-				<input
-					type="number"
-					name="total_hospital_beds"
-					id="total_hospital_beds"
-					className="input-text"
-					// onChange={handleChange}
-					// value={values.total_hospital_beds}
-					data-total-hospital-beds
-					required
-				/>
-			</label><br />
-			<label htmlFor="period_type">
-				Period Type
-				<select
-					as="select"
-					className="form-control input-text select"
-					id="period_type"
-					name="period_type"
-					data-period-type
-				>
-					<option defaultValue="days">days</option>
-					<option defaultValue="weeks">weeks</option>
-					<option defaultValue="months">months</option>
-				</select>
-			</label><br />
-			<input
-				type="submit"
-				className="register"
-				id="estimate"
-				value="Estimate"
-				data-go-estimate
-			/>
-		</form>
-	</Fragment>
-);
+import estimatorHelper from '../estimatorHelper';
 
-export default CovidForm;
+export default class CovidForm extends React.Component {
+	constructor(props) {
+		super(props);
+		this.handlePopulationChange = this.handlePopulationChange.bind(this);
+		this.handleTimeToElapseChange = this.handleTimeToElapseChange.bind(this);
+		this.handleReportedCasesChange = this.handleReportedCasesChange.bind(this);
+		this.handleTotalHospitalBedsChange = this.handleTotalHospitalBedsChange.bind(this);
+		this.handlePeriodTypeChange = this.handlePeriodTypeChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+
+		this.state = {
+			population: '',
+			timeToElapse: '',
+			reportedCases: '',
+			totalHospitalBeds: '',
+			periodType: 'days'
+		};
+	}
+
+	handlePopulationChange(event) {
+		console.log(event.target.value)
+		this.setState({population: event.target.value});
+	}
+
+	handleTimeToElapseChange(event) {
+		console.log(event.target.value)
+		this.setState({timeToElapse: event.target.value});
+	}
+
+	handleReportedCasesChange(event) {
+		console.log(event.target.value)
+		this.setState({reportedCases: event.target.value});
+	}
+
+	handleTotalHospitalBedsChange(event) {
+		console.log(event.target.value)
+		this.setState({totalHospitalBeds: event.target.value});
+	}
+
+	handlePeriodTypeChange(event) {
+		console.log(event.target.value)
+		this.setState({periodType: event.target.value});
+	}
+
+	handleSubmit(e) {
+		const data = {}
+
+		e.preventDefault();
+		data['population'] = parseInt(this.state.population, 0);
+		data['timeToElapse'] = parseInt(this.state.timeToElapse, 0);
+		data['reportedCases'] = parseInt(this.state.reportedCases, 0);
+		data['totalHospitalBeds'] = parseInt(this.state.totalHospitalBeds, 0);
+
+		data['region'] = {
+			name: "Africa",
+			avgAge: 19.7,
+			avgDailyIncomeInUSD: 5,
+			avgDailyIncomePopulation: 0.71
+		}
+		estimatorHelper(data);
+	}
+
+	render() {
+		return (
+			<Fragment>
+				<form
+					className="form-detail"
+					id="myform"
+					onSubmit={this.handleSubmit}
+				>
+					<label htmlFor="population">
+						Population
+						<input
+							data-population
+							type="number"
+							name="population"
+							id="population"
+							className="input-text"
+							value={this.state.population}
+							onChange={this.handlePopulationChange}
+							required
+						/>
+					</label><br />
+					<label htmlFor="time_to_elapse">
+						Time To Elapse
+						<input
+							data-time-to-elapse
+							type="number"
+							name="time_to_elapse"
+							id="time_to_elapse"
+							className="input-text"
+							value={this.state.timeToElapse}
+							onChange={this.handleTimeToElapseChange}
+							required
+						/>
+					</label><br />
+					<label htmlFor="reported_cases">
+						Reported Cases
+						<input
+							data-reported-cases
+							type="number"
+							name="reported_cases"
+							id="reported_cases"
+							className="input-text"
+							value={this.state.reportedCases}
+							onChange={this.handleReportedCasesChange}
+							required
+						/>
+					</label><br />
+					<label htmlFor="total_hospital_beds">
+						Total Hospital Beds
+						<input
+							data-total-hospital-beds
+							type="number"
+							name="total_hospital_beds"
+							id="total_hospital_beds"
+							className="input-text"
+							value={this.state.totalHospitalBeds}
+							onChange={this.handleTotalHospitalBedsChange}
+							required
+						/>
+					</label><br />
+					<label htmlFor="period_type">
+						Period Type<br />
+						<select
+							data-period-type
+							as="select"
+							className="form-control input-text select"
+							id="period_type"
+							name="period_type"
+							value={this.state.periodType}
+							onChange={this.handlePeriodTypeChange}
+						>
+							<option defaultValue="days">days</option>
+							<option defaultValue="weeks">weeks</option>
+							<option defaultValue="months">months</option>
+						</select>
+					</label><br />
+					<input
+						data-go-estimate
+						type="submit"
+						className="register"
+						value="Estimate"
+						id="estimate"
+					/>
+				</form>
+			</Fragment>
+		);
+	}
+}
+
+// export default CovidForm;
+
 /*
 		<Formik
 			className="form-detail"
@@ -121,8 +191,8 @@ export default CovidForm;
 						name="population"
 						id="population"
 						className="input-text"
-						// onChange={handleChange}
 						// value={values.population}
+						// onChange={handleChange}
 						data-population
 						required
 					/>
@@ -135,8 +205,8 @@ export default CovidForm;
 						name="time_to_elapse"
 						id="time_to_elapse"
 						className="input-text"
-						// onChange={handleChange}
 						// value={values.time_to_elapse}
+						// onChange={handleChange}
 						data-time-to-elapse
 						required
 					/>
@@ -150,8 +220,8 @@ export default CovidForm;
 					name="reported_cases"
 					id="reported_cases"
 					className="input-text"
-					// onChange={handleChange}
 					// value={values.reported_cases}
+					// onChange={handleChange}
 					data-reported-cases
 					required
 				/>
@@ -165,8 +235,8 @@ export default CovidForm;
 						name="total_hospital_beds"
 						id="total_hospital_beds"
 						className="input-text"
-						// onChange={handleChange}
 						// value={values.total_hospital_beds}
+						// onChange={handleChange}
 						data-total-hospital-beds
 						required
 					/>
@@ -180,10 +250,10 @@ export default CovidForm;
 						id="period_type"
 						name="period_type"
 						data-period-type
-					>
 						<option defaultValue="days">days</option>
 						<option defaultValue="weeks">weeks</option>
 						<option defaultValue="months">months</option>
+					>
 					</select>
 				</div>
 			</div>
@@ -191,8 +261,8 @@ export default CovidForm;
 				<input
 					type="submit"
 					className="register"
-					id="estimate"
 					value="Estimate"
+					id="estimate"
 					data-go-estimate
 				/>
 			</div>
