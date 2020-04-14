@@ -9,58 +9,59 @@ const CovidForm = () => (
 			// onSubmit={handleSubmit}
 		>
 			<label htmlFor="population">
+				Population
 				<input
 					type="number"
 					name="population"
 					id="population"
-					placeholder="Population"
 					className="input-text"
 					// onChange={handleChange}
 					// value={values.population}
 					data-population
 					required
-				/><br />
-			</label>
+				/>
+			</label><br />
 			<label htmlFor="time_to_elapse">
+				Time To Elapse
 				<input
 					type="number"
 					name="time_to_elapse"
 					id="time_to_elapse"
-					placeholder="Time To Elapse"
 					className="input-text"
 					// onChange={handleChange}
 					// value={values.time_to_elapse}
 					data-time-to-elapse
 					required
-				/><br />
-			</label>
+				/>
+			</label><br />
 			<label htmlFor="reported_cases">
+				Reported Cases
 				<input
 					type="number"
 					name="reported_cases"
 					id="reported_cases"
-					placeholder="Reported Cases"
 					className="input-text"
 					// onChange={handleChange}
 					// value={values.reported_cases}
 					data-reported-cases
 					required
-				/><br />
-			</label>
+				/>
+			</label><br />
 			<label htmlFor="total_hospital_beds">
+				Total Hospital Beds
 				<input
 					type="number"
 					name="total_hospital_beds"
 					id="total_hospital_beds"
-					placeholder="Total Hospital Beds"
 					className="input-text"
 					// onChange={handleChange}
 					// value={values.total_hospital_beds}
 					data-total-hospital-beds
 					required
-				/><br />
-			</label>
+				/>
+			</label><br />
 			<label htmlFor="period_type">
+				Period Type
 				<select
 					as="select"
 					className="form-control input-text select"
@@ -71,8 +72,8 @@ const CovidForm = () => (
 					<option defaultValue="days">days</option>
 					<option defaultValue="weeks">weeks</option>
 					<option defaultValue="months">months</option>
-				</select><br />
-			</label>
+				</select>
+			</label><br />
 			<input
 				type="submit"
 				className="register"
@@ -113,8 +114,9 @@ export default CovidForm;
 
 <h2>INPUT DATA</h2>
 			<div className="form-group">
-				<div className="form-row form-row-1">
-					<label htmlFor="population">Population</label>
+				<div className="form-row form
+					<label htmlFor="population">Population</label>-row-1">
+						population
 					<input
 						type="number"
 						name="population"
@@ -126,8 +128,9 @@ export default CovidForm;
 						required
 					/>
 				</div>
-				<div className="form-row form-row-1">
-					<label htmlFor="time_to_elapse">Time To Elapse</label>
+				<div className="form-row form
+					<label htmlFor="time_to_elapse">Time To Elapse</label>-row-1">
+						time_to_elapse
 					<input
 						type="number"
 						name="time_to_elapse"
@@ -140,8 +143,9 @@ export default CovidForm;
 					/>
 				</div>
 			</div>
-			<div className="form-row">
-				<label htmlFor="reported_cases">Reported Cases</label>
+			<div className=
+				<label htmlFor="reported_cases">Reported Cases</label>"form-row">
+					reported_cases
 				<input
 					type="number"
 					name="reported_cases"
@@ -154,8 +158,9 @@ export default CovidForm;
 				/>
 			</div>
 			<div className="form-group">
-				<div className="form-row form-row-1 ">
-					<label htmlFor="total_hospital_beds">Total Hospital Beds</label>
+				<div className="form-row form-row
+					<label htmlFor="total_hospital_beds">Total Hospital Beds</label>-1 ">
+						total_hospital_beds
 					<input
 						type="number"
 						name="total_hospital_beds"
@@ -167,8 +172,9 @@ export default CovidForm;
 						required
 					/>
 				</div>
-				<div className="form-row form-row-1">
-					<label htmlFor="period_type">Period Type</label>
+				<div className="form-row form
+					<label htmlFor="period_type">Period Type</label>-row-1">
+						form
 					<select
 						as="select"
 						className="form-control input-text select"
