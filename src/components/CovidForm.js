@@ -97,20 +97,18 @@ const CovidForm = () => (
 							</label>
 						</div>
 						<div className="form-row form-row-1">
-							<label htmlFor="period_type">
-								Period Type
-								<br /><Field
-									as="select"
-									className="form-control input-text"
-									id="period_type"
-									name="period_type"
-									data-period-type
-								>
-									<option defaultValue="days">days</option>
-									<option defaultValue="weeks">weeks</option>
-									<option defaultValue="months">months</option>
-								</Field>
-							</label>
+							<label htmlFor="period_type">Period Type</label>
+							<Field
+								as="select"
+								className="form-control input-text"
+								id="period_type"
+								name="period_type"
+								data-period-type
+							>
+								<option defaultValue="days">days</option>
+								<option defaultValue="weeks">weeks</option>
+								<option defaultValue="months">months</option>
+							</Field>
 						</div>
 					</div>
 					<div className="form-row-last">
