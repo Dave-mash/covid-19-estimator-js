@@ -72,81 +72,26 @@ export default class CovidForm extends React.Component {
 					id="myform"
 					onSubmit={this.handleSubmit}
 				>
-					<label htmlFor="population">
-						Population
-						<input
-							data-population
-							type="number"
-							name="population"
-							id="population"
-							className="input-text"
-							// value={this.state.population}
-							// onChange={this.handlePopulationChange}
-							required
-						/>
+					<label for="population">
+						Total Population
+						<input type="number" id="population" data-population required />
 					</label><br />
-					<label htmlFor="time_to_elapse">
-						Time To Elapse
-						<input
-							data-time-to-elapse
-							type="number"
-							name="time_to_elapse"
-							id="time_to_elapse"
-							className="input-text"
-							// value={this.state.timeToElapse}
-							// onChange={this.handleTimeToElapseChange}
-							required
-						/>
-					</label><br />
-					<label htmlFor="reported_cases">
+					<label for="reportedCases">
 						Reported Cases
-						<input
-							data-reported-cases
-							type="number"
-							name="reported_cases"
-							id="reported_cases"
-							className="input-text"
-							// value={this.state.reportedCases}
-							// onChange={this.handleReportedCasesChange}
-							required
-						/>
+						<input type="number" id="reportedCases" data-reported-cases required />
 					</label><br />
-					<label htmlFor="total_hospital_beds">
-						Total Hospital Beds
-						<input
-							data-total-hospital-beds
-							type="number"
-							name="total_hospital_beds"
-							id="total_hospital_beds"
-							className="input-text"
-							// value={this.state.totalHospitalBeds}
-							// onChange={this.handleTotalHospitalBedsChange}
-							required
-						/>
-					</label><br />
-					<label htmlFor="period_type">
-						Period Type<br />
-						<select
-							data-period-type
-							as="select"
-							className="form-control input-text select"
-							id="period_type"
-							name="period_type"
-							// value={this.state.periodType}
-							// onChange={this.handlePeriodTypeChange}
-						>
-							<option defaultValue="days">days</option>
-							<option defaultValue="weeks">weeks</option>
-							<option defaultValue="months">months</option>
-						</select>
-					</label><br />
-					<input
-						data-go-estimate
-						type="submit"
-						className="register"
-						value="Estimate"
-						id="estimate"
-					/>
+					<label for="timeToElapse">Time Period</label>
+					<input type="number" id="timeToElapse"  data-time-to-elapse required />
+					<label for="periodType" id="lab">Period Type</label><br />
+					<select id="periodType" data-period-type>
+						<option value="days">Days</option>
+						<option value="weeks">Weeks</option>
+						<option value="months">Months</option>
+					</select><br />
+					<label for="totalHospitalBeds">Total Hospital Beds</label><br />
+					<input type="number" id="totalHospitalBeds" data-total-hospital-beds required /><br />
+					<br />
+					<input id="button" type="submit" data-go-estimate />
 				</form>
 			</Fragment>
 		);
@@ -266,5 +211,90 @@ export default class CovidForm extends React.Component {
 				/>
 			</div>
 
+
+
+
+
+
+
+
+
+
+
+					<label htmlFor="population">
+						Population
+						<input
+							data-population
+							type="number"
+							name="population"
+							id="population"
+							className="input-text"
+							// value={this.state.population}
+							// onChange={this.handlePopulationChange}
+							required
+						/>
+					</label><br />
+					<label htmlFor="time_to_elapse">
+						Time To Elapse
+						<input
+							data-time-to-elapse
+							type="number"
+							name="time_to_elapse"
+							id="time_to_elapse"
+							className="input-text"
+							// value={this.state.timeToElapse}
+							// onChange={this.handleTimeToElapseChange}
+							required
+						/>
+					</label><br />
+					<label htmlFor="reported_cases">
+						Reported Cases
+						<input
+							data-reported-cases
+							type="number"
+							name="reported_cases"
+							id="reported_cases"
+							className="input-text"
+							// value={this.state.reportedCases}
+							// onChange={this.handleReportedCasesChange}
+							required
+						/>
+					</label><br />
+					<label htmlFor="total_hospital_beds">
+						Total Hospital Beds
+						<input
+							data-total-hospital-beds
+							type="number"
+							name="total_hospital_beds"
+							id="total_hospital_beds"
+							className="input-text"
+							// value={this.state.totalHospitalBeds}
+							// onChange={this.handleTotalHospitalBedsChange}
+							required
+						/>
+					</label><br />
+					<label htmlFor="period_type">
+						Period Type<br />
+						<select
+							data-period-type
+							as="select"
+							className="form-control input-text select"
+							id="period_type"
+							name="period_type"
+							// value={this.state.periodType}
+							// onChange={this.handlePeriodTypeChange}
+						>
+							<option defaultValue="days">days</option>
+							<option defaultValue="weeks">weeks</option>
+							<option defaultValue="months">months</option>
+						</select>
+					</label><br />
+					<input
+						data-go-estimate
+						type="submit"
+						className="register"
+						value="Estimate"
+						id="estimate"
+					/>
 
 */
