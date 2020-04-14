@@ -7,62 +7,72 @@ const CovidForm = () => (
 			className="form-detail"
 			id="myform"
 			// onSubmit={handleSubmit}
-		><br />
-			<input
-				type="number"
-				name="population"
-				id="population"
-				placeholder="Population"
-				className="input-text"
-				// onChange={handleChange}
-				// value={values.population}
-				data-population
-				required
-			/><br />
-			<input
-				type="number"
-				name="time_to_elapse"
-				id="time_to_elapse"
-				placeholder="Time To Elapse"
-				className="input-text"
-				// onChange={handleChange}
-				// value={values.time_to_elapse}
-				data-time-to-elapse
-				required
-			/><br />
-			<input
-				type="number"
-				name="reported_cases"
-				id="reported_cases"
-				placeholder="Reported Cases"
-				className="input-text"
-				// onChange={handleChange}
-				// value={values.reported_cases}
-				data-reported-cases
-				required
-			/><br />
-			<input
-				type="number"
-				name="total_hospital_beds"
-				id="total_hospital_beds"
-				placeholder="Total Hospital Beds"
-				className="input-text"
-				// onChange={handleChange}
-				// value={values.total_hospital_beds}
-				data-total-hospital-beds
-				required
-			/><br />
-			<select
-				as="select"
-				className="form-control input-text select"
-				id="period_type"
-				name="period_type"
-				data-period-type
-			>
-				<option defaultValue="days">days</option>
-				<option defaultValue="weeks">weeks</option>
-				<option defaultValue="months">months</option>
-			</select><br />
+		>
+			<label htmlFor="population">
+				<input
+					type="number"
+					name="population"
+					id="population"
+					placeholder="Population"
+					className="input-text"
+					// onChange={handleChange}
+					// value={values.population}
+					data-population
+					required
+				/><br />
+			</label>
+			<label htmlFor="time_to_elapse">
+				<input
+					type="number"
+					name="time_to_elapse"
+					id="time_to_elapse"
+					placeholder="Time To Elapse"
+					className="input-text"
+					// onChange={handleChange}
+					// value={values.time_to_elapse}
+					data-time-to-elapse
+					required
+				/><br />
+			</label>
+			<label htmlFor="reported_cases">
+				<input
+					type="number"
+					name="reported_cases"
+					id="reported_cases"
+					placeholder="Reported Cases"
+					className="input-text"
+					// onChange={handleChange}
+					// value={values.reported_cases}
+					data-reported-cases
+					required
+				/><br />
+			</label>
+			<label htmlFor="total_hospital_beds">
+				<input
+					type="number"
+					name="total_hospital_beds"
+					id="total_hospital_beds"
+					placeholder="Total Hospital Beds"
+					className="input-text"
+					// onChange={handleChange}
+					// value={values.total_hospital_beds}
+					data-total-hospital-beds
+					required
+				/><br />
+			</label>
+			<label htmlFor="period_type">
+				<select
+					as="select"
+					className="form-control input-text select"
+					id="period_type"
+					name="period_type"
+					data-period-type
+				>
+					<option defaultValue="days">days</option>
+					<option defaultValue="weeks">weeks</option>
+					<option defaultValue="months">months</option>
+				</select><br />
+			</label>
 			<input
 				type="submit"
 				className="register"
