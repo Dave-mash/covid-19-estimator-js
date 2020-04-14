@@ -14,7 +14,7 @@ const CovidForm = () => (
 				data-population
 				required
 			/>
-		</label>
+		</label><br />
 		<label htmlFor="timeToElapse">
 			Time To Elapse
 			<input
@@ -25,7 +25,7 @@ const CovidForm = () => (
 				data-time-to-elapse
 				required
 			/>
-		</label>
+		</label><br />
 		<label htmlFor="reportedCases">
 			Reported Cases
 			<input
@@ -36,7 +36,7 @@ const CovidForm = () => (
 				data-reported-cases
 				required
 			/>
-		</label>
+		</label><br />
 		<label htmlFor="totalHospitalBeds">
 			Total Hospital Beds
 			<input
@@ -47,7 +47,7 @@ const CovidForm = () => (
 				data-total-hospital-beds
 				required
 			/>
-		</label>
+		</label><br />
 		<label htmlFor="periodType">
 			Period Type
 			<input
@@ -58,7 +58,7 @@ const CovidForm = () => (
 				data-period-type
 				required
 			/>
-		</label>
+		</label><br />
 		<button
 			type="submit"
 			id="estimate"
