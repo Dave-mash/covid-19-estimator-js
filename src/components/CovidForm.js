@@ -49,7 +49,6 @@ export default class CovidForm extends React.Component {
 
 	handleSubmit(e) {
 		const data = {};
-
 		e.preventDefault();
 		data.population = parseInt(this.state.population, 0);
 		data.timeToElapse = parseInt(this.state.timeToElapse, 0);
