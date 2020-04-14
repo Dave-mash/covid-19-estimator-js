@@ -170,6 +170,7 @@ const estimatorHelper = (data) => {
 
 		severeImpact.dollarsInFlight = parseInt(dollarStr, 0);
 	}
+	console.log(estimate);
 
 	return estimate;
 };
