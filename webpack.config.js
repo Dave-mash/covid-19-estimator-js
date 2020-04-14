@@ -8,7 +8,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'public/dist'),
         filename: 'bundle.js',
-        publicPath: (mode === 'development') ? '/dist/' : '/covid-19-estimator-js/dist/'
+        publicPath: '/covid-19-estimator-js/dist/'
     },
     module: {
         rules: [{
