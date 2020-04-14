@@ -8,7 +8,100 @@ const CovidForm = () => (
 			id="myform"
 			// onSubmit={handleSubmit}
 		>
-			<h2>INPUT DATA</h2>
+			<input
+				type="number"
+				name="population"
+				id="population"
+				placeholder="Population"
+				className="input-text"
+				// onChange={handleChange}
+				// value={values.population}
+				data-population
+				required
+			/><br />
+			<input
+				type="number"
+				name="time_to_elapse"
+				id="time_to_elapse"
+				placeholder="Time To Elapse"
+				className="input-text"
+				// onChange={handleChange}
+				// value={values.time_to_elapse}
+				data-time-to-elapse
+				required
+			/><br />
+			<input
+				type="number"
+				name="reported_cases"
+				id="reported_cases"
+				placeholder="Reported Cases"
+				className="input-text"
+				// onChange={handleChange}
+				// value={values.reported_cases}
+				data-reported-cases
+				required
+			/><br />
+			<input
+				type="number"
+				name="total_hospital_beds"
+				id="total_hospital_beds"
+				placeholder="Total Hospital Beds"
+				className="input-text"
+				// onChange={handleChange}
+				// value={values.total_hospital_beds}
+				data-total-hospital-beds
+				required
+			/><br />
+			<select
+				as="select"
+				className="form-control input-text select"
+				id="period_type"
+				name="period_type"
+				data-period-type
+			>
+				<option defaultValue="days">days</option>
+				<option defaultValue="weeks">weeks</option>
+				<option defaultValue="months">months</option>
+			</select><br />
+			<input
+				type="submit"
+				className="register"
+				id="estimate"
+				value="Estimate"
+				data-go-estimate
+			/>
+		</form>
+	</Fragment>
+);
+
+export default CovidForm;
+
+/*
+		<Formik
+			className="form-detail"
+			id="myform"
+			initialValues={{
+				population: '1',
+				time_to_elapse: '1',
+				reported_cases: '1',
+				total_hospital_beds: '1',
+				period_type: 'days'
+			}}
+			onSubmit={(values, { setSubmitting }) => {
+				console.log(values);
+				setSubmitting(false);
+			}}
+		>
+			{({
+				values,
+				handleChange,
+				handleSubmit
+			}) => (
+
+			)}
+		</Formik>
+
+<h2>INPUT DATA</h2>
 			<div className="form-group">
 				<div className="form-row form-row-1">
 					<label htmlFor="population">Population</label>
@@ -88,33 +181,5 @@ const CovidForm = () => (
 					data-go-estimate
 				/>
 			</div>
-		</form>
-	</Fragment>
-);
 
-export default CovidForm;
-
-/*
-		<Formik
-			className="form-detail"
-			id="myform"
-			initialValues={{
-				population: '1',
-				time_to_elapse: '1',
-				reported_cases: '1',
-				total_hospital_beds: '1',
-				period_type: 'days'
-			}}
-			onSubmit={(values, { setSubmitting }) => {
-				console.log(values);
-				setSubmitting(false);
-			}}
-		>
-			{({
-				values,
-				handleChange,
-				handleSubmit
-			}) => (
-
-			)}
-		</Formik> */
+		*/
