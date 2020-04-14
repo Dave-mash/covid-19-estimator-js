@@ -22,29 +22,29 @@ export default class CovidForm extends React.Component {
 		};
 	}
 
-	handlePopulationChange(event) {
-		console.log(event.target.value);
-		this.setState({ population: event.target.value });
+	// handlePopulationChange(event) {
+		// console.log(event.target.value);
+		// this.setState({ population: event.target.value });
 	}
 
 	handleTimeToElapseChange(event) {
-		console.log(event.target.value);
-		this.setState({ timeToElapse: event.target.value });
+		// console.log(event.target.value);
+		// this.setState({ timeToElapse: event.target.value });
 	}
 
 	handleReportedCasesChange(event) {
-		console.log(event.target.value);
-		this.setState({ reportedCases: event.target.value });
+		// console.log(event.target.value);
+		// this.setState({ reportedCases: event.target.value });
 	}
 
 	handleTotalHospitalBedsChange(event) {
-		console.log(event.target.value);
-		this.setState({ totalHospitalBeds: event.target.value });
+		// console.log(event.target.value);
+		// this.setState({ totalHospitalBeds: event.target.value });
 	}
 
 	handlePeriodTypeChange(event) {
-		console.log(event.target.value);
-		this.setState({ periodType: event.target.value });
+		// console.log(event.target.value);
+		// this.setState({ periodType: event.target.value });
 	}
 
 	handleSubmit(e) {
@@ -80,8 +80,8 @@ export default class CovidForm extends React.Component {
 							name="population"
 							id="population"
 							className="input-text"
-							value={this.state.population}
-							onChange={this.handlePopulationChange}
+							// value={this.state.population}
+							// onChange={this.handlePopulationChange}
 							required
 						/>
 					</label><br />
@@ -93,8 +93,8 @@ export default class CovidForm extends React.Component {
 							name="time_to_elapse"
 							id="time_to_elapse"
 							className="input-text"
-							value={this.state.timeToElapse}
-							onChange={this.handleTimeToElapseChange}
+							// value={this.state.timeToElapse}
+							// onChange={this.handleTimeToElapseChange}
 							required
 						/>
 					</label><br />
@@ -106,8 +106,8 @@ export default class CovidForm extends React.Component {
 							name="reported_cases"
 							id="reported_cases"
 							className="input-text"
-							value={this.state.reportedCases}
-							onChange={this.handleReportedCasesChange}
+							// value={this.state.reportedCases}
+							// onChange={this.handleReportedCasesChange}
 							required
 						/>
 					</label><br />
@@ -119,8 +119,8 @@ export default class CovidForm extends React.Component {
 							name="total_hospital_beds"
 							id="total_hospital_beds"
 							className="input-text"
-							value={this.state.totalHospitalBeds}
-							onChange={this.handleTotalHospitalBedsChange}
+							// value={this.state.totalHospitalBeds}
+							// onChange={this.handleTotalHospitalBedsChange}
 							required
 						/>
 					</label><br />
@@ -132,8 +132,8 @@ export default class CovidForm extends React.Component {
 							className="form-control input-text select"
 							id="period_type"
 							name="period_type"
-							value={this.state.periodType}
-							onChange={this.handlePeriodTypeChange}
+							// value={this.state.periodType}
+							// onChange={this.handlePeriodTypeChange}
 						>
 							<option defaultValue="days">days</option>
 							<option defaultValue="weeks">weeks</option>
@@ -155,7 +155,7 @@ export default class CovidForm extends React.Component {
 
 // export default CovidForm;
 
-/*
+
 		<Formik
 			className="form-detail"
 			id="myform"
@@ -166,13 +166,13 @@ export default class CovidForm extends React.Component {
 				total_hospital_beds: '1',
 				period_type: 'days'
 			}}
-			onSubmit={(values, { setSubmitting }) => {
-				console.log(values);
+			// onSubmit={(values, { setSubmitting }) => {
+				// console.log(values);
 				setSubmitting(false);
 			}}
 		>
 			{({
-				values,
+				// values,
 				handleChange,
 				handleSubmit
 			}) => (
@@ -191,7 +191,7 @@ export default class CovidForm extends React.Component {
 						id="population"
 						className="input-text"
 						// value={values.population}
-						// onChange={handleChange}
+						onChange={handleChange}
 						data-population
 						required
 					/>
@@ -205,7 +205,7 @@ export default class CovidForm extends React.Component {
 						id="time_to_elapse"
 						className="input-text"
 						// value={values.time_to_elapse}
-						// onChange={handleChange}
+						onChange={handleChange}
 						data-time-to-elapse
 						required
 					/>
@@ -220,7 +220,7 @@ export default class CovidForm extends React.Component {
 					id="reported_cases"
 					className="input-text"
 					// value={values.reported_cases}
-					// onChange={handleChange}
+					onChange={handleChange}
 					data-reported-cases
 					required
 				/>
@@ -235,7 +235,7 @@ export default class CovidForm extends React.Component {
 						id="total_hospital_beds"
 						className="input-text"
 						// value={values.total_hospital_beds}
-						// onChange={handleChange}
+						onChange={handleChange}
 						data-total-hospital-beds
 						required
 					/>
@@ -249,9 +249,9 @@ export default class CovidForm extends React.Component {
 						id="period_type"
 						name="period_type"
 						data-period-type
-						<option defaultValue="days">days</option>
-						<option defaultValue="weeks">weeks</option>
-						<option defaultValue="months">months</option>
+						// <option defaultValue="days">days</option>
+						// <option defaultValue="weeks">weeks</option>
+						// <option defaultValue="months">months</option>
 					>
 					</select>
 				</div>
@@ -260,10 +260,10 @@ export default class CovidForm extends React.Component {
 				<input
 					type="submit"
 					className="register"
-					value="Estimate"
+					// value="Estimate"
 					id="estimate"
 					data-go-estimate
 				/>
 			</div>
 
-		*/
+		
