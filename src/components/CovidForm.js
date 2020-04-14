@@ -72,9 +72,9 @@ export default class CovidForm extends React.Component {
 				<input type="number" id="reportedCases" data-reported-cases required />
 				<label htmlFor="timeToElapse">Time Period</label>
 				<input type="number" id="timeToElapse" data-time-to-elapse required />
-				<label htmlFor="periodType" id="lab">Period Type</label><br />
 				<label htmlFor="totalHospitalBeds">Total Hospital Beds</label><br />
 				<input type="number" id="totalHospitalBeds" data-total-hospital-beds required /><br />
+				<label htmlFor="periodType" id="lab">Period Type</label><br />
 				<select id="periodType" data-period-type>
 					<option value="days">Days</option>
 					<option value="weeks">Weeks</option>
