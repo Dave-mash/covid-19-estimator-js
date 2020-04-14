@@ -22,29 +22,29 @@ export default class CovidForm extends React.Component {
 		};
 	}
 
-	// handlePopulationChange(event) {
+	handlePopulationChange(event) {
 		// console.log(event.target.value);
-		// this.setState({ population: event.target.value });
+		this.setState({ population: event.target.value });
 	}
 
 	handleTimeToElapseChange(event) {
 		// console.log(event.target.value);
-		// this.setState({ timeToElapse: event.target.value });
+		this.setState({ timeToElapse: event.target.value });
 	}
 
 	handleReportedCasesChange(event) {
 		// console.log(event.target.value);
-		// this.setState({ reportedCases: event.target.value });
+		this.setState({ reportedCases: event.target.value });
 	}
 
 	handleTotalHospitalBedsChange(event) {
 		// console.log(event.target.value);
-		// this.setState({ totalHospitalBeds: event.target.value });
+		this.setState({ totalHospitalBeds: event.target.value });
 	}
 
 	handlePeriodTypeChange(event) {
 		// console.log(event.target.value);
-		// this.setState({ periodType: event.target.value });
+		this.setState({ periodType: event.target.value });
 	}
 
 	handleSubmit(e) {
@@ -155,7 +155,7 @@ export default class CovidForm extends React.Component {
 
 // export default CovidForm;
 
-
+/*
 		<Formik
 			className="form-detail"
 			id="myform"
@@ -266,4 +266,5 @@ export default class CovidForm extends React.Component {
 				/>
 			</div>
 
-		
+
+*/
