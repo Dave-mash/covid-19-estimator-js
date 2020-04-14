@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 // import { Formik, Field } from 'formik';
 
 import estimatorHelper from '../estimatorHelper';
@@ -23,27 +23,22 @@ export default class CovidForm extends React.Component {
 	}
 
 	handlePopulationChange(event) {
-		// console.log(event.target.value);
 		this.setState({ population: event.target.value });
 	}
 
 	handleTimeToElapseChange(event) {
-		// console.log(event.target.value);
 		this.setState({ timeToElapse: event.target.value });
 	}
 
 	handleReportedCasesChange(event) {
-		// console.log(event.target.value);
 		this.setState({ reportedCases: event.target.value });
 	}
 
 	handleTotalHospitalBedsChange(event) {
-		// console.log(event.target.value);
 		this.setState({ totalHospitalBeds: event.target.value });
 	}
 
 	handlePeriodTypeChange(event) {
-		// console.log(event.target.value);
 		this.setState({ periodType: event.target.value });
 	}
 
@@ -69,7 +64,7 @@ export default class CovidForm extends React.Component {
 			<form
 				className="form-detail"
 				id="myform"
-				// onSubmit={this.handleSubmit}
+				onSubmit={this.handleSubmit}
 			>
 				<label htmlFor="population">
 					Total Population

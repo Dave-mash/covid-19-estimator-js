@@ -1,4 +1,4 @@
-import React, { Fragment, Suspense } from 'react';
+import React, { Suspense } from 'react';
 
 const CovidForm = React.lazy(() => import('./CovidForm'));
 const CovidInfo = React.lazy(() => import('./CovidInfo'));
