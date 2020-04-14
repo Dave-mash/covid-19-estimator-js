@@ -14,7 +14,7 @@ const CovidForm = () => (
 				period_type: 'days'
 			}}
 			onSubmit={(values, { setSubmitting }) => {
-				console.log(values);
+				console.log('==> ', values);
 				setSubmitting(false);
 			}}
 		>
