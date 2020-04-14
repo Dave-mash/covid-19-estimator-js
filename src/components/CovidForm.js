@@ -72,23 +72,23 @@ export default class CovidForm extends React.Component {
 					id="myform"
 					onSubmit={this.handleSubmit}
 				>
-					<label for="population">
+					<label htmlFor="population">
 						Total Population
 						<input type="number" id="population" data-population required />
 					</label><br />
-					<label for="reportedCases">
+					<label htmlFor="reportedCases">
 						Reported Cases
 						<input type="number" id="reportedCases" data-reported-cases required />
 					</label><br />
-					<label for="timeToElapse">Time Period</label>
-					<input type="number" id="timeToElapse"  data-time-to-elapse required />
-					<label for="periodType" id="lab">Period Type</label><br />
+					<label htmlFor="timeToElapse">Time Period</label>
+					<input type="number" id="timeToElapse" data-time-to-elapse required />
+					<label htmlFor="periodType" id="lab">Period Type</label><br />
 					<select id="periodType" data-period-type>
 						<option value="days">Days</option>
 						<option value="weeks">Weeks</option>
 						<option value="months">Months</option>
 					</select><br />
-					<label for="totalHospitalBeds">Total Hospital Beds</label><br />
+					<label htmlFor="totalHospitalBeds">Total Hospital Beds</label><br />
 					<input type="number" id="totalHospitalBeds" data-total-hospital-beds required /><br />
 					<br />
 					<input id="button" type="submit" data-go-estimate />
@@ -210,15 +210,6 @@ export default class CovidForm extends React.Component {
 					data-go-estimate
 				/>
 			</div>
-
-
-
-
-
-
-
-
-
 
 
 					<label htmlFor="population">
