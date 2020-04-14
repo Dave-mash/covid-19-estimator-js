@@ -99,7 +99,7 @@ const CovidForm = () => (
 						<div className="form-row form-row-1">
 							<label htmlFor="period_type">
 								Period Type
-								<Field
+								<br /><Field
 									as="select"
 									className="form-control input-text"
 									id="period_type"
