@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Formik, Field } from 'formik';
+// import { Formik, Field } from 'formik';
 
 const CovidForm = () => (
 	<Fragment>
@@ -69,7 +69,7 @@ const CovidForm = () => (
 			Submit
 		</button>
 
-		{/*<Formik
+		{	/* <Formik
 		// 	className="form-detail"
 		// 	id="myform"
 		// 	initialValues={{
@@ -143,7 +143,7 @@ const CovidForm = () => (
 		// 				</label>
 		// 			</div>
 		// 			<div className="form-group">
-		// 				<div className="form-row form-row-1 ">
+		// 				<div className="form-row form-row-// 1 ">
 		// 					<label htmlFor="total_hospital_beds">
 		// 						Total Hospital Beds
 		// 						<Field
@@ -187,7 +187,7 @@ const CovidForm = () => (
 		// 			</div>
 		// 		</form>
 		// 	)}
-		// </Formik>*/}
+		// </Formik> */	}
 	</Fragment>
 );
 
