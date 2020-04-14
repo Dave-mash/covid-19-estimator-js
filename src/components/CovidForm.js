@@ -1,192 +1,131 @@
 import React, { Fragment } from 'react';
-// import { Formik, Field } from 'formik';
+import { Formik, Field } from 'formik';
 
 const CovidForm = () => (
 	<Fragment>
-		<label htmlFor="population">
-			population
-			<input
-				type="number"
-				name="population"
-				id="population"
-				className="input-text"
-				data-population
-				required
-			/>
-		</label><br />
-		<label htmlFor="timeToElapse">
-			Time To Elapse
-			<input
-				type="number"
-				name="timeToElapse"
-				id="timeToElapse"
-				className="input-text"
-				data-time-to-elapse
-				required
-			/>
-		</label><br />
-		<label htmlFor="reportedCases">
-			Reported Cases
-			<input
-				type="number"
-				name="reportedCases"
-				id="reportedCases"
-				className="input-text"
-				data-reported-cases
-				required
-			/>
-		</label><br />
-		<label htmlFor="totalHospitalBeds">
-			Total Hospital Beds
-			<input
-				type="number"
-				name="totalHospitalBeds"
-				id="totalHospitalBeds"
-				className="input-text"
-				data-total-hospital-beds
-				required
-			/>
-		</label><br />
-		<label htmlFor="periodType">
-			Period Type
-			<input
-				type="number"
-				name="periodType"
-				id="periodType"
-				className="input-text"
-				data-period-type
-				required
-			/>
-		</label><br />
-		<button
-			type="submit"
-			id="estimate"
-			className="input-text"
-			data-go-estimate
-			required
+		<Formik
+			className="form-detail"
+			id="myform"
+			initialValues={{
+				population: '1',
+				time_to_elapse: '1',
+				reported_cases: '1',
+				total_hospital_beds: '1',
+				period_type: 'days'
+			}}
+			onSubmit={(values, { setSubmitting }) => {
+				console.log(values);
+				setSubmitting(false);
+			}}
 		>
-			Submit
-		</button>
-
-		{	/* <Formik
-		// 	className="form-detail"
-		// 	id="myform"
-		// 	initialValues={{
-		// 		population: '',
-		// 		time_to_elapse: '',
-		// 		reported_cases: '',
-		// 		total_hospital_beds: '',
-		// 		period_type: 'days'
-		// 	}}
-		// 	onSubmit={(values, { setSubmitting }) => {
-		// 		console.log('==> ', values);
-		// 		setSubmitting(false);
-		// 	}}
-		// >
-		// 	{({
-		// 		values,
-		// 		handleChange,
-		// 		handleSubmit
-		// 	}) => (
-		// 		<form
-		// 			className="form-detail"
-		// 			id="myform"
-		// 			onSubmit={handleSubmit}
-		// 		>
-		// 			<h2>INPUT DATA</h2>
-		// 			<div className="form-group">
-		// 				<div className="form-row form-row-1">
-		// 					<label htmlFor="population">
-		// 						Population
-		// 						<Field
-		// 							type="number"
-		// 							name="population"
-		// 							id="population"
-		// 							className="input-text"
-		// 							onChange={handleChange}
-		// 							value={values.population}
-		// 							data-population
-		// 							required
-		// 						/>
-		// 					</label>
-		// 				</div>
-		// 				<div className="form-row form-row-1">
-		// 					<label htmlFor="time_to_elapse">
-		// 						Time To Elapse
-		// 						<Field
-		// 							type="number"
-		// 							name="time_to_elapse"
-		// 							id="time_to_elapse"
-		// 							className="input-text"
-		// 							onChange={handleChange}
-		// 							value={values.time_to_elapse}
-		// 							data-time-to-elapse
-		// 							required
-		// 						/>
-		// 					</label>
-		// 				</div>
-		// 			</div>
-		// 			<div className="form-row">
-		// 				<label htmlFor="reported_cases">
-		// 					Reported Cases
-		// 					<Field
-		// 						type="number"
-		// 						name="reported_cases"
-		// 						id="reported_cases"
-		// 						className="input-text"
-		// 						onChange={handleChange}
-		// 						value={values.reported_cases}
-		// 						data-reported-cases
-		// 						required
-		// 					/>
-		// 				</label>
-		// 			</div>
-		// 			<div className="form-group">
-		// 				<div className="form-row form-row-// 1 ">
-		// 					<label htmlFor="total_hospital_beds">
-		// 						Total Hospital Beds
-		// 						<Field
-		// 							type="number"
-		// 							name="total_hospital_beds"
-		// 							id="total_hospital_beds"
-		// 							className="input-text"
-		// 							onChange={handleChange}
-		// 							value={values.total_hospital_beds}
-		// 							data-total-hospital-beds
-		// 							required
-		// 						/>
-		// 					</label>
-		// 				</div>
-		// 				<div className="form-row form-row-1">
-		// 					<label htmlFor="period_type">
-		// 						Period Type
-		// 						<Field
-		// 							as="select"
-		// 							className="form-control input-text"
-		// 							id="period_type"
-		// 							name="period_type"
-		// 							data-period-type
-		// 						>
-		// 							<option defaultValue="days">days</option>
-		// 							<option defaultValue="weeks">weeks</option>
-		// 							<option defaultValue="months">months</option>
-		// 						</Field>
-		// 					</label>
-		// 				</div>
-		// 			</div>
-		// 			<div className="form-row-last">
-		// 				<button
-		// 					type="submit"
-		// 					className="register"
-		// 					id="estimate"
-		// 					data-go-estimate
-		// 				>
-		// 					Estimate
-		// 				</button>
-		// 			</div>
-		// 		</form>
-		// 	)}
-		// </Formik> */	}
+			{({
+				values,
+				handleChange,
+				handleSubmit
+			}) => (
+				<form
+					className="form-detail"
+					id="myform"
+					onSubmit={handleSubmit}
+				>
+					<h2>INPUT DATA</h2>
+					<div className="form-group">
+						<div className="form-row form-row-1">
+							<label htmlFor="population">
+								Population
+								<Field
+									type="number"
+									name="population"
+									placeholder="Population"
+									id="population"
+									className="input-text"
+									onChange={handleChange}
+									value={values.population}
+									data-population={values.population}
+									required
+								/>
+							</label>
+						</div>
+						<div className="form-row form-row-1">
+							<label htmlFor="time_to_elapse">
+								Time To Elapse
+								<Field
+									type="number"
+									name="time_to_elapse"
+									placeholder="Time To Elapse"
+									id="time_to_elapse"
+									className="input-text"
+									onChange={handleChange}
+									value={values.time_to_elapse}
+									data-time-to-elapse={values.time_to_elapse}
+									required
+								/>
+							</label>
+						</div>
+					</div>
+					<div className="form-row">
+						<label htmlFor="reported_cases">
+							Reported Cases
+							<Field
+								type="number"
+								name="reported_cases"
+								placeholder="Reported To Elapse"
+								id="reported_cases"
+								className="input-text"
+								onChange={handleChange}
+								value={values.reported_cases}
+								data-reported-cases={values.reported_cases}
+								required
+							/>
+						</label>
+					</div>
+					<div className="form-group">
+						<div className="form-row form-row-1 ">
+							<label htmlFor="total_hospital_beds">
+								Total Hospital Beds
+								<Field
+									type="number"
+									name="total_hospital_beds"
+									placeholder="Total To Elapse"
+									id="total_hospital_beds"
+									className="input-text"
+									onChange={handleChange}
+									value={values.total_hospital_beds}
+									data-total-hospital-beds={values.total_hospital_beds}
+									required
+								/>
+							</label>
+						</div>
+						<div className="form-row form-row-1">
+							<label htmlFor="period_type">
+								Period Type
+								<Field
+									as="select"
+									className="form-control input-text"
+									id="period_type"
+									name="period_type"
+									data-period-type
+								>
+									<option defaultValue="days">days</option>
+									<option defaultValue="weeks">weeks</option>
+									<option defaultValue="months">months</option>
+								</Field>
+							</label>
+						</div>
+					</div>
+					<div className="form-row-last">
+						<button
+							type="submit"
+							className="register"
+							id="estimate"
+							data-go-estimate
+						>
+							Estimate
+						</button>
+					</div>
+				</form>
+			)}
+		</Formik>
 	</Fragment>
 );
 
