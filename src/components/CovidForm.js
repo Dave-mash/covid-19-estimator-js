@@ -98,8 +98,8 @@ const CovidForm = () => (
 						</div>
 						<div className="form-row form-row-1">
 							<label htmlFor="period_type">
-								Period Type<br />
-								<Field
+								Period Type
+								<br /><Field
 									as="select"
 									className="form-control input-text"
 									id="period_type"
@@ -114,14 +114,13 @@ const CovidForm = () => (
 						</div>
 					</div>
 					<div className="form-row-last">
-						<button
+						<Field
 							type="submit"
 							className="register"
 							id="estimate"
+							value="Estimate"
 							data-go-estimate
-						>
-							Estimate
-						</button>
+						/>
 					</div>
 				</form>
 			)}
