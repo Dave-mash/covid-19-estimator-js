@@ -66,34 +66,32 @@ export default class CovidForm extends React.Component {
 
 	render() {
 		return (
-			<Fragment>
-				<form
-					className="form-detail"
-					id="myform"
-					onSubmit={this.handleSubmit}
-				>
-					<label htmlFor="population">
-						Total Population
-						<input type="number" id="population" data-population required />
-					</label><br />
-					<label htmlFor="reportedCases">
-						Reported Cases
-						<input type="number" id="reportedCases" data-reported-cases required />
-					</label><br />
-					<label htmlFor="timeToElapse">Time Period</label>
-					<input type="number" id="timeToElapse" data-time-to-elapse required />
-					<label htmlFor="periodType" id="lab">Period Type</label><br />
-					<select id="periodType" data-period-type>
-						<option value="days">Days</option>
-						<option value="weeks">Weeks</option>
-						<option value="months">Months</option>
-					</select><br />
-					<label htmlFor="totalHospitalBeds">Total Hospital Beds</label><br />
-					<input type="number" id="totalHospitalBeds" data-total-hospital-beds required /><br />
-					<br />
-					<input id="button" type="submit" data-go-estimate />
-				</form>
-			</Fragment>
+			<form
+				className="form-detail"
+				id="myform"
+				// onSubmit={this.handleSubmit}
+			>
+				<label htmlFor="population">
+					Total Population
+					<input type="number" id="population" data-population required />
+				</label><br />
+				<label htmlFor="reportedCases">
+					Reported Cases
+					<input type="number" id="reportedCases" data-reported-cases required />
+				</label><br />
+				<label htmlFor="timeToElapse">Time Period</label>
+				<input type="number" id="timeToElapse" data-time-to-elapse required />
+				<label htmlFor="periodType" id="lab">Period Type</label><br />
+				<select id="periodType" data-period-type>
+					<option value="days">Days</option>
+					<option value="weeks">Weeks</option>
+					<option value="months">Months</option>
+				</select><br />
+				<label htmlFor="totalHospitalBeds">Total Hospital Beds</label><br />
+				<input type="number" id="totalHospitalBeds" data-total-hospital-beds required /><br />
+				<br />
+				<input id="button" type="submit" data-go-estimate />
+			</form>
 		);
 	}
 }
