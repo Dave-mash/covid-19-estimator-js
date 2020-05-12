@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{33:function(e,t,a){"use strict";a.r(t);var n=a(0),s=a.n(n);t.default=()=>s.a.createElement("div",{className:"form-left"},s.a.createElement("h2",null,"COVID-19 Estimator"),s.a.createElement("b",{className:"text-1"},"COVID-19 Estimator is an infection impact estimator."))}}]);
